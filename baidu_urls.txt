@@ -1,4 +1,3 @@
-https://www.sfysoft.com/2020/07/30/Ubuntu-Issues-and-Solution/
 https://www.sfysoft.com/2020/07/29/Git-Issues-and-Solution/
 https://www.sfysoft.com/2019/07/15/Cross-Build-Compiler-Name-Usage/
 https://www.sfysoft.com/2019/07/11/Apt-No-Public-Key/
