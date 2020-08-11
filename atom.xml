@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://oakchen.gitee.io/"/>
-  <updated>2020-07-31T08:43:57.941Z</updated>
+  <updated>2020-08-11T07:15:45.914Z</updated>
   <id>https://oakchen.gitee.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用df命令看到的分区大小是正确的吗？</title>
+    <link href="https://oakchen.gitee.io/2020/08/11/Is-fs-size-correct/"/>
+    <id>https://oakchen.gitee.io/2020/08/11/Is-fs-size-correct/</id>
+    <published>2020-08-11T12:43:06.000Z</published>
+    <updated>2020-08-11T07:15:45.914Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在使用Linux时，通常会用到df命令来查看磁盘挂载情况，那么df的输出结果可信吗？一般用户似乎不应怀疑，作者以前也从没怀疑过，直到发生了下面的这些事情。&lt;/p&gt;
+&lt;h2 id=&quot;df报告的分区大小比分区表定义的大时&quot;&gt;&lt;a class=&quot;markdownIt-Anchor
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://oakchen.gitee.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://oakchen.gitee.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Git使用问题与解决方法</title>
