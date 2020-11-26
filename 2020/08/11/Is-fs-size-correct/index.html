@@ -22,7 +22,7 @@
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用df命令看到的分区大小是正确的吗？">
-<meta property="og:url" content="https://oakchen.gitee.io/2020/08/11/Is-fs-size-correct/index.html">
+<meta property="og:url" content="https://www.sfysoft.com/2020/08/11/Is-fs-size-correct/index.html">
 <meta property="og:site_name" content="sfysoft">
 <meta property="og:description" content="在使用Linux时，通常会用到df命令来查看磁盘挂载情况，那么df的输出结果可信吗？一般用户似乎不应怀疑，作者以前也从没怀疑过，直到发生了下面的这些事情。  df报告的分区大小比分区表定义的大时 在使用某芯片厂商的SDK开发产品时，检查设备上的eMMC使用情况看到有下面的情况： 123456789~# df -Th -x tmpfs -x devtmpfsFilesystem      Type">
 <meta property="og:locale" content="zh-CN">
@@ -31,7 +31,7 @@
 <meta name="twitter:title" content="使用df命令看到的分区大小是正确的吗？">
 <meta name="twitter:description" content="在使用Linux时，通常会用到df命令来查看磁盘挂载情况，那么df的输出结果可信吗？一般用户似乎不应怀疑，作者以前也从没怀疑过，直到发生了下面的这些事情。  df报告的分区大小比分区表定义的大时 在使用某芯片厂商的SDK开发产品时，检查设备上的eMMC使用情况看到有下面的情况： 123456789~# df -Th -x tmpfs -x devtmpfsFilesystem      Type">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://oakchen.gitee.io/2020/08/11/Is-fs-size-correct/index.html">
+  <link rel="canonical" href="https://www.sfysoft.com/2020/08/11/Is-fs-size-correct/index.html">
   
     <link rel="alternate" href="/atom.xml" title="sfysoft" type="application/atom+xml">
   
@@ -43,6 +43,8 @@
   
   
   
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css">
+  
 </head>
 
 
@@ -53,7 +55,7 @@
       
       
       <div class="profile-block text-center">
-        <a id="avatar" href="https://gitee.com/OakChen" target="_blank">
+        <a id="avatar" href="https://github.com/OakChen" target="_blank">
           <img class="img-circle img-rotate" src="/images/avatar.png" width="200" height="200">
         </a>
         <h2 id="name" class="hidden-xs hidden-sm">Oak Chen</h2>
@@ -395,7 +397,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://oakchen.gitee.io/2020/08/11/Is-fs-size-correct/" title="使用df命令看到的分区大小是正确的吗？" target="_blank" rel="external">https://oakchen.gitee.io/2020/08/11/Is-fs-size-correct/</a>
+      <a href="https://www.sfysoft.com/2020/08/11/Is-fs-size-correct/" title="使用df命令看到的分区大小是正确的吗？" target="_blank" rel="external">https://www.sfysoft.com/2020/08/11/Is-fs-size-correct/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -409,12 +411,12 @@
   <div class="panel-body">
     <figure class="media">
       <div class="media-left">
-        <a href="https://gitee.com/OakChen" target="_blank" class="img-burn thumb-sm visible-lg">
+        <a href="https://github.com/OakChen" target="_blank" class="img-burn thumb-sm visible-lg">
           <img src="/images/avatar.png" class="img-rounded w-full" alt="">
         </a>
       </div>
       <div class="media-body">
-        <h3 class="media-heading"><a href="https://gitee.com/OakChen" target="_blank"><span class="text-dark">Oak Chen</span><small class="ml-1x">Software Developer</small></a></h3>
+        <h3 class="media-heading"><a href="https://github.com/OakChen" target="_blank"><span class="text-dark">Oak Chen</span><small class="ml-1x">Software Developer</small></a></h3>
         <div>试验、记录、总结</div>
       </div>
     </figure>
@@ -428,6 +430,8 @@
     
   <section id="comments">
   	
+           
+    
   </section>
 
 
@@ -566,6 +570,25 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
    
+    
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css"> -->
+  <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+  <script src="https://unpkg.com/blueimp-md5@latest/js/md5.min.js"></script>
+  <script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'ab306904ff32116aa7fd',
+    clientSecret: '0ab19b144178905a1c97510bbbc499b63b3e7ff0',
+    repo: 'oakchen.github.io',
+    owner: 'OakChen',
+    admin: ['OakChen'],
+    id: location.pathname,
+    distractionFreeMode: true
+  })
+  gitalk.render('comments')
+  </script>
+
+      
+
 
 
 

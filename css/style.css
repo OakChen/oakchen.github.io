@@ -35,7 +35,8 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 16px;
+  padding: 0;
 }
 
 article,
@@ -462,27 +463,27 @@ h1,
 
 h2,
 .h2 {
-  font-size: 26px;
+  font-size: 27px;
 }
 
 h3,
 .h3 {
-  font-size: 22px;
+  font-size: 24px;
 }
 
 h4,
 .h4 {
-  font-size: 18px;
+  font-size: 21px;
 }
 
 h5,
 .h5 {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 h6,
 .h6 {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 p {
@@ -3258,8 +3259,8 @@ body {
 body {
   padding-right: 0 !important;
   font-family: Roboto, "Open Sans", "Segoe UI", "Lucida Sans Unicode", Helvetica, Arial, "PingHei","PingFang SC", "Helvetica Neue", "Work Sans","Hiragino Sans GB","Microsoft YaHei", SimSun, sans-serif;
-  font-size: 14px;
-  line-height: 1.57143;
+  font-size: 16px;
+  line-height: 24px;
   color: #333333;
   background-color: #fff;
 }
