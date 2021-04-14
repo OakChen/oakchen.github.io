@@ -22,19 +22,19 @@
 <meta name="keywords" content="Android应用,Android Studio">
 <meta property="og:type" content="article">
 <meta property="og:title" content="APK编译错误之Duplicate class">
-<meta property="og:url" content="https://oakchen.gitee.io/2019/05/24/APK-Build-Issue-Duplicate-class/index.html">
+<meta property="og:url" content="https://www.sfysoft.com/2019/05/24/APK-Build-Issue-Duplicate-class/index.html">
 <meta property="og:site_name" content="sfysoft">
 <meta property="og:description" content="为了快速开发，不免使用些第三方库，这时，第三方库的依赖包与我们原来引用的同名包就可能存在版本冲突。这里，记录一个在Android Studio 3.4.1中引用了某第三方库后，编译时出现Duplicate class的问题及其解决办法。编译输出如下图：  意思是，相同的类出现在了两个不同版本的com.android.support包里。同时，查看build.gradle时发现有如下图提示：  这里">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://oakchen.gitee.io/2019/05/24/APK-Build-Issue-Duplicate-class/build-output.png">
-<meta property="og:image" content="https://oakchen.gitee.io/2019/05/24/APK-Build-Issue-Duplicate-class/build-gradle-notice.png">
+<meta property="og:image" content="https://www.sfysoft.com/2019/05/24/APK-Build-Issue-Duplicate-class/build-output.png">
+<meta property="og:image" content="https://www.sfysoft.com/2019/05/24/APK-Build-Issue-Duplicate-class/build-gradle-notice.png">
 <meta property="og:updated_time" content="2019-12-12T07:10:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="APK编译错误之Duplicate class">
 <meta name="twitter:description" content="为了快速开发，不免使用些第三方库，这时，第三方库的依赖包与我们原来引用的同名包就可能存在版本冲突。这里，记录一个在Android Studio 3.4.1中引用了某第三方库后，编译时出现Duplicate class的问题及其解决办法。编译输出如下图：  意思是，相同的类出现在了两个不同版本的com.android.support包里。同时，查看build.gradle时发现有如下图提示：  这里">
-<meta name="twitter:image" content="https://oakchen.gitee.io/2019/05/24/APK-Build-Issue-Duplicate-class/build-output.png">
+<meta name="twitter:image" content="https://www.sfysoft.com/2019/05/24/APK-Build-Issue-Duplicate-class/build-output.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://oakchen.gitee.io/2019/05/24/APK-Build-Issue-Duplicate-class/index.html">
+  <link rel="canonical" href="https://www.sfysoft.com/2019/05/24/APK-Build-Issue-Duplicate-class/index.html">
   
     <link rel="alternate" href="/atom.xml" title="sfysoft" type="application/atom+xml">
   
@@ -46,6 +46,8 @@
   
   
   
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css">
+  
 </head>
 
 
@@ -56,7 +58,7 @@
       
       
       <div class="profile-block text-center">
-        <a id="avatar" href="https://gitee.com/OakChen" target="_blank">
+        <a id="avatar" href="https://github.com/OakChen" target="_blank">
           <img class="img-circle img-rotate" src="/images/avatar.png" width="200" height="200">
         </a>
         <h2 id="name" class="hidden-xs hidden-sm">Oak Chen</h2>
@@ -172,7 +174,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ubuntu/">Ubuntu</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/">信息安全</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件使用/">软件使用</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ubuntu/">Ubuntu</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/">信息安全</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件使用/">软件使用</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -182,7 +184,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android应用/">Android应用</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian/">Debian</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Samba/">Samba</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SecureCRT/">SecureCRT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcc/">gcc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/toolchain/">toolchain</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/信息安全/">信息安全</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具链/">工具链</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/路由器/">路由器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件使用/">软件使用</a><span class="tag-list-count">3</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android应用/">Android应用</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian/">Debian</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gradle/">Gradle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Samba/">Samba</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SecureCRT/">SecureCRT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcc/">gcc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/toolchain/">toolchain</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/信息安全/">信息安全</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具链/">工具链</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/路由器/">路由器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件使用/">软件使用</a><span class="tag-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -192,7 +194,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/Android-Studio/" style="font-size: 13.5px;">Android Studio</a> <a href="/tags/Android应用/" style="font-size: 13.5px;">Android应用</a> <a href="/tags/Debian/" style="font-size: 13px;">Debian</a> <a href="/tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/Samba/" style="font-size: 13px;">Samba</a> <a href="/tags/SecureCRT/" style="font-size: 13px;">SecureCRT</a> <a href="/tags/Ubuntu/" style="font-size: 14px;">Ubuntu</a> <a href="/tags/gcc/" style="font-size: 13px;">gcc</a> <a href="/tags/git/" style="font-size: 13px;">git</a> <a href="/tags/toolchain/" style="font-size: 13.5px;">toolchain</a> <a href="/tags/信息安全/" style="font-size: 13.5px;">信息安全</a> <a href="/tags/工具链/" style="font-size: 13.5px;">工具链</a> <a href="/tags/开发工具/" style="font-size: 13.5px;">开发工具</a> <a href="/tags/路由器/" style="font-size: 13px;">路由器</a> <a href="/tags/软件使用/" style="font-size: 14px;">软件使用</a>
+      <a href="/tags/Android-Studio/" style="font-size: 13.67px;">Android Studio</a> <a href="/tags/Android应用/" style="font-size: 13.33px;">Android应用</a> <a href="/tags/Debian/" style="font-size: 13px;">Debian</a> <a href="/tags/Gradle/" style="font-size: 13px;">Gradle</a> <a href="/tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/Samba/" style="font-size: 13px;">Samba</a> <a href="/tags/SecureCRT/" style="font-size: 13px;">SecureCRT</a> <a href="/tags/Ubuntu/" style="font-size: 13.67px;">Ubuntu</a> <a href="/tags/gcc/" style="font-size: 13px;">gcc</a> <a href="/tags/git/" style="font-size: 13px;">git</a> <a href="/tags/toolchain/" style="font-size: 13.33px;">toolchain</a> <a href="/tags/信息安全/" style="font-size: 13.33px;">信息安全</a> <a href="/tags/工具链/" style="font-size: 13.33px;">工具链</a> <a href="/tags/开发工具/" style="font-size: 13.33px;">开发工具</a> <a href="/tags/路由器/" style="font-size: 13px;">路由器</a> <a href="/tags/软件使用/" style="font-size: 14px;">软件使用</a>
     </div>
   </div>
 
@@ -201,7 +203,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">10</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -213,6 +215,36 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/软件使用/">软件使用</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/04/06/AS-Issues-and-Solution/" class="title">使用Android Studio的那些问题与解决办法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-06T11:41:05.000Z" itemprop="datePublished">2021-04-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2021/01/07/Terminology/" class="title">Terminology</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-01-07T01:33:15.000Z" itemprop="datePublished">2021-01-07</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -254,36 +286,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2019-07-15T02:21:37.000Z" itemprop="datePublished">2019-07-15</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/软件使用/">软件使用</a>
-              </p>
-              <p class="item-title">
-                <a href="/2019/07/11/Apt-No-Public-Key/" class="title">apt-get update出现NO_PUBKEY提示的解决方法</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2019-07-11T05:43:41.000Z" itemprop="datePublished">2019-07-11</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/软件使用/">软件使用</a>
-              </p>
-              <p class="item-title">
-                <a href="/2019/06/26/Hexo-Issues-and-Solution/" class="title">Hexo使用问题与解决方法</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2019-06-26T02:09:10.000Z" itemprop="datePublished">2019-06-26</time>
               </p>
             </div>
           </li>
@@ -383,7 +385,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://oakchen.gitee.io/2019/05/24/APK-Build-Issue-Duplicate-class/" title="APK编译错误之Duplicate class" target="_blank" rel="external">https://oakchen.gitee.io/2019/05/24/APK-Build-Issue-Duplicate-class/</a>
+      <a href="https://www.sfysoft.com/2019/05/24/APK-Build-Issue-Duplicate-class/" title="APK编译错误之Duplicate class" target="_blank" rel="external">https://www.sfysoft.com/2019/05/24/APK-Build-Issue-Duplicate-class/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -397,12 +399,12 @@
   <div class="panel-body">
     <figure class="media">
       <div class="media-left">
-        <a href="https://gitee.com/OakChen" target="_blank" class="img-burn thumb-sm visible-lg">
+        <a href="https://github.com/OakChen" target="_blank" class="img-burn thumb-sm visible-lg">
           <img src="/images/avatar.png" class="img-rounded w-full" alt="">
         </a>
       </div>
       <div class="media-body">
-        <h3 class="media-heading"><a href="https://gitee.com/OakChen" target="_blank"><span class="text-dark">Oak Chen</span><small class="ml-1x">Software Developer</small></a></h3>
+        <h3 class="media-heading"><a href="https://github.com/OakChen" target="_blank"><span class="text-dark">Oak Chen</span><small class="ml-1x">Software Developer</small></a></h3>
         <div>试验、记录、总结</div>
       </div>
     </figure>
@@ -416,6 +418,8 @@
     
   <section id="comments">
   	
+           
+    
   </section>
 
 
@@ -514,7 +518,7 @@
 
     <div class="copyright">
     	
-        &copy; 2020 Oak Chen
+        &copy; 2021 Oak Chen
         
         <div class="publishby">
         	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
@@ -558,6 +562,25 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
    
+    
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css"> -->
+  <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+  <script src="https://unpkg.com/blueimp-md5@latest/js/md5.min.js"></script>
+  <script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'ab306904ff32116aa7fd',
+    clientSecret: '0ab19b144178905a1c97510bbbc499b63b3e7ff0',
+    repo: 'oakchen.github.io',
+    owner: 'OakChen',
+    admin: ['OakChen'],
+    id: location.pathname,
+    distractionFreeMode: true
+  })
+  gitalk.render('comments')
+  </script>
+
+      
+
 
 
 
