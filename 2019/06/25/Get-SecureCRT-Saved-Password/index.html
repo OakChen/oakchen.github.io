@@ -22,20 +22,20 @@
 <meta name="keywords" content="信息安全,SecureCRT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="获取SecureCRT保存的密码">
-<meta property="og:url" content="https://www.sfysoft.com/2019/06/25/Get-SecureCRT-Saved-Password/index.html">
+<meta property="og:url" content="https://oakchen.gitee.io/2019/06/25/Get-SecureCRT-Saved-Password/index.html">
 <meta property="og:site_name" content="sfysoft">
 <meta property="og:description" content="本文内容，在Windows 10 1803教育版（OS内部版本17134.829），SecureCRT 7.0.0 build 326上验证过。 使用SecureCRT保存了很多SSH会话，时间久了，密码都忘记了，虽然能自动登录，但有时还是需要使用密码。好在登录密码保存在SecureCRT的Session配置，于是有了找回的可能。 首先修改要找回主机的Host信息，改成另外一台主机，新改的主机，需">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://www.sfysoft.com/2019/06/25/Get-SecureCRT-Saved-Password/Password-Authentication-Failed.png">
-<meta property="og:image" content="https://www.sfysoft.com/2019/06/25/Get-SecureCRT-Saved-Password/View-Password.png">
-<meta property="og:image" content="https://www.sfysoft.com/2019/06/25/Get-SecureCRT-Saved-Password/Session-Password.png">
+<meta property="og:image" content="https://oakchen.gitee.io/2019/06/25/Get-SecureCRT-Saved-Password/Password-Authentication-Failed.png">
+<meta property="og:image" content="https://oakchen.gitee.io/2019/06/25/Get-SecureCRT-Saved-Password/View-Password.png">
+<meta property="og:image" content="https://oakchen.gitee.io/2019/06/25/Get-SecureCRT-Saved-Password/Session-Password.png">
 <meta property="og:updated_time" content="2019-12-12T07:10:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="获取SecureCRT保存的密码">
 <meta name="twitter:description" content="本文内容，在Windows 10 1803教育版（OS内部版本17134.829），SecureCRT 7.0.0 build 326上验证过。 使用SecureCRT保存了很多SSH会话，时间久了，密码都忘记了，虽然能自动登录，但有时还是需要使用密码。好在登录密码保存在SecureCRT的Session配置，于是有了找回的可能。 首先修改要找回主机的Host信息，改成另外一台主机，新改的主机，需">
-<meta name="twitter:image" content="https://www.sfysoft.com/2019/06/25/Get-SecureCRT-Saved-Password/Password-Authentication-Failed.png">
+<meta name="twitter:image" content="https://oakchen.gitee.io/2019/06/25/Get-SecureCRT-Saved-Password/Password-Authentication-Failed.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://www.sfysoft.com/2019/06/25/Get-SecureCRT-Saved-Password/index.html">
+  <link rel="canonical" href="https://oakchen.gitee.io/2019/06/25/Get-SecureCRT-Saved-Password/index.html">
   
     <link rel="alternate" href="/atom.xml" title="sfysoft" type="application/atom+xml">
   
@@ -47,8 +47,6 @@
   
   
   
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css">
-  
 </head>
 
 
@@ -59,7 +57,7 @@
       
       
       <div class="profile-block text-center">
-        <a id="avatar" href="https://github.com/OakChen" target="_blank">
+        <a id="avatar" href="https://gitee.com/OakChen" target="_blank">
           <img class="img-circle img-rotate" src="/images/avatar.png" width="200" height="200">
         </a>
         <h2 id="name" class="hidden-xs hidden-sm">Oak Chen</h2>
@@ -376,7 +374,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://www.sfysoft.com/2019/06/25/Get-SecureCRT-Saved-Password/" title="获取SecureCRT保存的密码" target="_blank" rel="external">https://www.sfysoft.com/2019/06/25/Get-SecureCRT-Saved-Password/</a>
+      <a href="https://oakchen.gitee.io/2019/06/25/Get-SecureCRT-Saved-Password/" title="获取SecureCRT保存的密码" target="_blank" rel="external">https://oakchen.gitee.io/2019/06/25/Get-SecureCRT-Saved-Password/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -390,12 +388,12 @@
   <div class="panel-body">
     <figure class="media">
       <div class="media-left">
-        <a href="https://github.com/OakChen" target="_blank" class="img-burn thumb-sm visible-lg">
+        <a href="https://gitee.com/OakChen" target="_blank" class="img-burn thumb-sm visible-lg">
           <img src="/images/avatar.png" class="img-rounded w-full" alt="">
         </a>
       </div>
       <div class="media-body">
-        <h3 class="media-heading"><a href="https://github.com/OakChen" target="_blank"><span class="text-dark">Oak Chen</span><small class="ml-1x">Software Developer</small></a></h3>
+        <h3 class="media-heading"><a href="https://gitee.com/OakChen" target="_blank"><span class="text-dark">Oak Chen</span><small class="ml-1x">Software Developer</small></a></h3>
         <div>试验、记录、总结</div>
       </div>
     </figure>
@@ -409,8 +407,6 @@
     
   <section id="comments">
   	
-           
-    
   </section>
 
 
@@ -553,25 +549,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
    
-    
-  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css"> -->
-  <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
-  <script src="https://unpkg.com/blueimp-md5@latest/js/md5.min.js"></script>
-  <script type="text/javascript">
-  var gitalk = new Gitalk({
-    clientID: 'ab306904ff32116aa7fd',
-    clientSecret: '0ab19b144178905a1c97510bbbc499b63b3e7ff0',
-    repo: 'oakchen.github.io',
-    owner: 'OakChen',
-    admin: ['OakChen'],
-    id: location.pathname,
-    distractionFreeMode: true
-  })
-  gitalk.render('comments')
-  </script>
-
-      
-
 
 
 
