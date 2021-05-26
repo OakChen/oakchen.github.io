@@ -22,20 +22,20 @@
 <meta name="keywords" content="信息安全,SecureCRT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="获取SecureCRT保存的密码">
-<meta property="og:url" content="https://oakchen.gitee.io/2019/06/25/Get-SecureCRT-Saved-Password/index.html">
+<meta property="og:url" content="https://www.sfysoft.com/2019/06/25/Get-SecureCRT-Saved-Password/index.html">
 <meta property="og:site_name" content="sfysoft">
 <meta property="og:description" content="本文内容，在Windows 10 1803教育版（OS内部版本17134.829），SecureCRT 7.0.0 build 326上验证过。 使用SecureCRT保存了很多SSH会话，时间久了，密码都忘记了，虽然能自动登录，但有时还是需要使用密码。好在登录密码保存在SecureCRT的Session配置，于是有了找回的可能。 首先修改要找回主机的Host信息，改成另外一台主机，新改的主机，需">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://oakchen.gitee.io/2019/06/25/Get-SecureCRT-Saved-Password/Password-Authentication-Failed.png">
-<meta property="og:image" content="https://oakchen.gitee.io/2019/06/25/Get-SecureCRT-Saved-Password/View-Password.png">
-<meta property="og:image" content="https://oakchen.gitee.io/2019/06/25/Get-SecureCRT-Saved-Password/Session-Password.png">
+<meta property="og:image" content="https://www.sfysoft.com/2019/06/25/Get-SecureCRT-Saved-Password/Password-Authentication-Failed.png">
+<meta property="og:image" content="https://www.sfysoft.com/2019/06/25/Get-SecureCRT-Saved-Password/View-Password.png">
+<meta property="og:image" content="https://www.sfysoft.com/2019/06/25/Get-SecureCRT-Saved-Password/Session-Password.png">
 <meta property="og:updated_time" content="2019-12-12T07:10:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="获取SecureCRT保存的密码">
 <meta name="twitter:description" content="本文内容，在Windows 10 1803教育版（OS内部版本17134.829），SecureCRT 7.0.0 build 326上验证过。 使用SecureCRT保存了很多SSH会话，时间久了，密码都忘记了，虽然能自动登录，但有时还是需要使用密码。好在登录密码保存在SecureCRT的Session配置，于是有了找回的可能。 首先修改要找回主机的Host信息，改成另外一台主机，新改的主机，需">
-<meta name="twitter:image" content="https://oakchen.gitee.io/2019/06/25/Get-SecureCRT-Saved-Password/Password-Authentication-Failed.png">
+<meta name="twitter:image" content="https://www.sfysoft.com/2019/06/25/Get-SecureCRT-Saved-Password/Password-Authentication-Failed.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://oakchen.gitee.io/2019/06/25/Get-SecureCRT-Saved-Password/index.html">
+  <link rel="canonical" href="https://www.sfysoft.com/2019/06/25/Get-SecureCRT-Saved-Password/index.html">
   
     <link rel="alternate" href="/atom.xml" title="sfysoft" type="application/atom+xml">
   
@@ -47,6 +47,8 @@
   
   
   
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css">
+  
 </head>
 
 
@@ -57,7 +59,7 @@
       
       
       <div class="profile-block text-center">
-        <a id="avatar" href="https://gitee.com/OakChen" target="_blank">
+        <a id="avatar" href="https://github.com/OakChen" target="_blank">
           <img class="img-circle img-rotate" src="/images/avatar.png" width="200" height="200">
         </a>
         <h2 id="name" class="hidden-xs hidden-sm">Oak Chen</h2>
@@ -173,7 +175,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ubuntu/">Ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/">信息安全</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件使用/">软件使用</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ubuntu/">Ubuntu</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/">信息安全</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/交叉编译/">交叉编译</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件使用/">软件使用</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -183,7 +185,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android应用/">Android应用</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian/">Debian</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gradle/">Gradle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Samba/">Samba</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SecureCRT/">SecureCRT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcc/">gcc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/toolchain/">toolchain</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/信息安全/">信息安全</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具链/">工具链</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/路由器/">路由器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件使用/">软件使用</a><span class="tag-list-count">4</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android应用/">Android应用</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian/">Debian</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gradle/">Gradle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Samba/">Samba</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SecureCRT/">SecureCRT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcc/">gcc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/toolchain/">toolchain</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/交叉编译/">交叉编译</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/信息安全/">信息安全</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具链/">工具链</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发工具/">开发工具</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/路由器/">路由器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件使用/">软件使用</a><span class="tag-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -193,7 +195,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/Android-Studio/" style="font-size: 13.67px;">Android Studio</a> <a href="/tags/Android应用/" style="font-size: 13.33px;">Android应用</a> <a href="/tags/Debian/" style="font-size: 13px;">Debian</a> <a href="/tags/Gradle/" style="font-size: 13px;">Gradle</a> <a href="/tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/Samba/" style="font-size: 13px;">Samba</a> <a href="/tags/SecureCRT/" style="font-size: 13px;">SecureCRT</a> <a href="/tags/Ubuntu/" style="font-size: 14px;">Ubuntu</a> <a href="/tags/gcc/" style="font-size: 13px;">gcc</a> <a href="/tags/git/" style="font-size: 13px;">git</a> <a href="/tags/toolchain/" style="font-size: 13.33px;">toolchain</a> <a href="/tags/信息安全/" style="font-size: 13.33px;">信息安全</a> <a href="/tags/工具链/" style="font-size: 13.33px;">工具链</a> <a href="/tags/开发工具/" style="font-size: 13.33px;">开发工具</a> <a href="/tags/路由器/" style="font-size: 13px;">路由器</a> <a href="/tags/软件使用/" style="font-size: 14px;">软件使用</a>
+      <a href="/tags/Android-Studio/" style="font-size: 13.67px;">Android Studio</a> <a href="/tags/Android应用/" style="font-size: 13.33px;">Android应用</a> <a href="/tags/Debian/" style="font-size: 13px;">Debian</a> <a href="/tags/Gradle/" style="font-size: 13px;">Gradle</a> <a href="/tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/Samba/" style="font-size: 13px;">Samba</a> <a href="/tags/SecureCRT/" style="font-size: 13px;">SecureCRT</a> <a href="/tags/Ubuntu/" style="font-size: 14px;">Ubuntu</a> <a href="/tags/gcc/" style="font-size: 13px;">gcc</a> <a href="/tags/git/" style="font-size: 13px;">git</a> <a href="/tags/toolchain/" style="font-size: 13.33px;">toolchain</a> <a href="/tags/交叉编译/" style="font-size: 13px;">交叉编译</a> <a href="/tags/信息安全/" style="font-size: 13.33px;">信息安全</a> <a href="/tags/工具链/" style="font-size: 13.33px;">工具链</a> <a href="/tags/开发工具/" style="font-size: 13.67px;">开发工具</a> <a href="/tags/路由器/" style="font-size: 13px;">路由器</a> <a href="/tags/软件使用/" style="font-size: 14px;">软件使用</a>
     </div>
   </div>
 
@@ -202,7 +204,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">10</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -214,6 +216,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发工具/">开发工具</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/开发工具/交叉编译/">交叉编译</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/05/26/How-to-build-a-full-feature-perf-for-embedded-linux/" class="title">如何给嵌入式Linux构建一个全功能的perf</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-05-26T10:58:26.000Z" itemprop="datePublished">2021-05-26</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -270,21 +287,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2020-07-29T21:43:06.000Z" itemprop="datePublished">2020-07-30</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/开发工具/">开发工具</a>
-              </p>
-              <p class="item-title">
-                <a href="/2019/07/15/Cross-Build-Compiler-Name-Usage/" class="title">GCC交叉编译器的命名与用法</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2019-07-15T02:21:37.000Z" itemprop="datePublished">2019-07-15</time>
               </p>
             </div>
           </li>
@@ -374,7 +376,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://oakchen.gitee.io/2019/06/25/Get-SecureCRT-Saved-Password/" title="获取SecureCRT保存的密码" target="_blank" rel="external">https://oakchen.gitee.io/2019/06/25/Get-SecureCRT-Saved-Password/</a>
+      <a href="https://www.sfysoft.com/2019/06/25/Get-SecureCRT-Saved-Password/" title="获取SecureCRT保存的密码" target="_blank" rel="external">https://www.sfysoft.com/2019/06/25/Get-SecureCRT-Saved-Password/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -388,12 +390,12 @@
   <div class="panel-body">
     <figure class="media">
       <div class="media-left">
-        <a href="https://gitee.com/OakChen" target="_blank" class="img-burn thumb-sm visible-lg">
+        <a href="https://github.com/OakChen" target="_blank" class="img-burn thumb-sm visible-lg">
           <img src="/images/avatar.png" class="img-rounded w-full" alt="">
         </a>
       </div>
       <div class="media-body">
-        <h3 class="media-heading"><a href="https://gitee.com/OakChen" target="_blank"><span class="text-dark">Oak Chen</span><small class="ml-1x">Software Developer</small></a></h3>
+        <h3 class="media-heading"><a href="https://github.com/OakChen" target="_blank"><span class="text-dark">Oak Chen</span><small class="ml-1x">Software Developer</small></a></h3>
         <div>试验、记录、总结</div>
       </div>
     </figure>
@@ -407,6 +409,8 @@
     
   <section id="comments">
   	
+           
+    
   </section>
 
 
@@ -549,6 +553,25 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
    
+    
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css"> -->
+  <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+  <script src="https://unpkg.com/blueimp-md5@latest/js/md5.min.js"></script>
+  <script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'ab306904ff32116aa7fd',
+    clientSecret: '0ab19b144178905a1c97510bbbc499b63b3e7ff0',
+    repo: 'oakchen.github.io',
+    owner: 'OakChen',
+    admin: ['OakChen'],
+    id: location.pathname,
+    distractionFreeMode: true
+  })
+  gitalk.render('comments')
+  </script>
+
+      
+
 
 
 
