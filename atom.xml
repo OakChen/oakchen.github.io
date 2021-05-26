@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sfysoft.com/"/>
-  <updated>2021-05-26T11:15:44.393Z</updated>
+  <updated>2021-05-26T14:04:49.197Z</updated>
   <id>https://www.sfysoft.com/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>如何给嵌入式Linux构建一个全功能的perf</title>
-    <link href="https://www.sfysoft.com/2021/05/26/How-to-build-a-full-feature-perf-for-embedded-linux/"/>
-    <id>https://www.sfysoft.com/2021/05/26/How-to-build-a-full-feature-perf-for-embedded-linux/</id>
+    <link href="https://www.sfysoft.com/2021/05/26/How-to-build-perf/"/>
+    <id>https://www.sfysoft.com/2021/05/26/How-to-build-perf/</id>
     <published>2021-05-26T10:58:26.000Z</published>
-    <updated>2021-05-26T11:15:44.393Z</updated>
+    <updated>2021-05-26T14:04:49.197Z</updated>
     
     <summary type="html">
     

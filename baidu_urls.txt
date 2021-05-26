@@ -1,4 +1,4 @@
-https://www.sfysoft.com/2021/05/26/How-to-build-a-full-feature-perf-for-embedded-linux/
+https://www.sfysoft.com/2021/05/26/How-to-build-perf/
 https://www.sfysoft.com/2021/04/23/Ubuntu-Use-MTP/
 https://www.sfysoft.com/2021/04/06/AS-Issues-and-Solution/
 https://www.sfysoft.com/2020/08/11/Is-fs-size-correct/
