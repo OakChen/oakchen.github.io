@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.sfysoft.com/2020/08/11/Is-fs-size-correct/</loc>
+    
+    <lastmod>2021-05-28T09:35:59.525Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.sfysoft.com/2019/06/20/HomeGateway-Hidden-Username-Password/</loc>
+    
+    <lastmod>2021-05-28T09:29:25.994Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.sfysoft.com/2021/05/26/How-to-build-perf/</loc>
     
     <lastmod>2021-05-26T15:10:52.573Z</lastmod>
@@ -23,13 +37,6 @@
   </url>
   
   <url>
-    <loc>https://www.sfysoft.com/2020/08/11/Is-fs-size-correct/</loc>
-    
-    <lastmod>2020-08-11T07:20:28.498Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.sfysoft.com/2020/07/29/Git-Issues-and-Solution/</loc>
     
     <lastmod>2020-07-31T08:43:57.941Z</lastmod>
@@ -37,7 +44,7 @@
   </url>
   
   <url>
-    <loc>https://www.sfysoft.com/2019/06/25/Get-SecureCRT-Saved-Password/</loc>
+    <loc>https://www.sfysoft.com/2019/07/15/Cross-Build-Compiler-Name-Usage/</loc>
     
     <lastmod>2019-12-12T07:10:48.000Z</lastmod>
     
@@ -51,21 +58,7 @@
   </url>
   
   <url>
-    <loc>https://www.sfysoft.com/2019/06/26/Hexo-Issues-and-Solution/</loc>
-    
-    <lastmod>2019-12-12T07:10:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.sfysoft.com/2019/06/20/HomeGateway-Hidden-Username-Password/</loc>
-    
-    <lastmod>2019-12-12T07:10:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.sfysoft.com/2019/05/28/APK-Build-Issue-Error-inflating-class/</loc>
+    <loc>https://www.sfysoft.com/2019/06/25/Get-SecureCRT-Saved-Password/</loc>
     
     <lastmod>2019-12-12T07:10:48.000Z</lastmod>
     
@@ -79,13 +72,6 @@
   </url>
   
   <url>
-    <loc>https://www.sfysoft.com/2019/06/21/Samba-Issues-and-Solution/</loc>
-    
-    <lastmod>2019-12-12T07:10:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.sfysoft.com/repository/index.html</loc>
     
     <lastmod>2019-12-12T07:10:48.000Z</lastmod>
@@ -93,7 +79,7 @@
   </url>
   
   <url>
-    <loc>https://www.sfysoft.com/2019/07/15/Cross-Build-Compiler-Name-Usage/</loc>
+    <loc>https://www.sfysoft.com/2019/06/21/Samba-Issues-and-Solution/</loc>
     
     <lastmod>2019-12-12T07:10:48.000Z</lastmod>
     
@@ -101,6 +87,20 @@
   
   <url>
     <loc>https://www.sfysoft.com/categories/index.html</loc>
+    
+    <lastmod>2019-12-12T07:10:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.sfysoft.com/2019/05/28/APK-Build-Issue-Error-inflating-class/</loc>
+    
+    <lastmod>2019-12-12T07:10:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.sfysoft.com/2019/06/26/Hexo-Issues-and-Solution/</loc>
     
     <lastmod>2019-12-12T07:10:48.000Z</lastmod>
     

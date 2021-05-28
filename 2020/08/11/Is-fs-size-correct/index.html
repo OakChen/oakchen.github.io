@@ -26,7 +26,7 @@
 <meta property="og:site_name" content="sfysoft">
 <meta property="og:description" content="在使用Linux时，通常会用到df命令来查看磁盘挂载情况，那么df的输出结果可信吗？一般用户似乎不应怀疑，作者以前也从没怀疑过，直到发生了下面的这些事情。  df报告的分区大小比分区表定义的大时 在使用某芯片厂商的SDK开发产品时，检查设备上的eMMC使用情况看到有下面的情况： 123456789~# df -Th -x tmpfs -x devtmpfsFilesystem      Type">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-08-11T07:20:28.498Z">
+<meta property="og:updated_time" content="2021-05-28T09:35:59.525Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用df命令看到的分区大小是正确的吗？">
 <meta name="twitter:description" content="在使用Linux时，通常会用到df命令来查看磁盘挂载情况，那么df的输出结果可信吗？一般用户似乎不应怀疑，作者以前也从没怀疑过，直到发生了下面的这些事情。  df报告的分区大小比分区表定义的大时 在使用某芯片厂商的SDK开发产品时，检查设备上的eMMC使用情况看到有下面的情况： 123456789~# df -Th -x tmpfs -x devtmpfsFilesystem      Type">
@@ -344,7 +344,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/08/11/Is-fs-size-correct/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.3k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.5k(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 10(分)</span>
@@ -384,10 +384,20 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">~<span class="comment"># df -Th -x tmpfs -x devtmpfs</span></span><br><span class="line">Filesystem      Type  Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/root       ext4  3.0G  646M  2.3G  22% /</span><br><span class="line">/dev/mmcblk0p36 vfat  1.0G   56M  969M   6% /bluetooth</span><br><span class="line">/dev/mmcblk0p26 ext4   12M  4.2M  7.4M  36% /dsp</span><br><span class="line">/dev/mmcblk0p42 ext4   28M  108K   27M   1% /persist</span><br><span class="line">/dev/mmcblk0p25 vfat   95M   19M   77M  20% /firmware</span><br><span class="line">/dev/mmcblk0p41 ext4   58M  3.1M   54M   6% /cache</span><br><span class="line">/dev/mmcblk0p50 ext4  3.4G  1.4G  2.0G  41% /data</span><br><span class="line">/dev/sda1       vfat   15G   15G  199M  99% /media/usb1</span><br><span class="line">~<span class="comment"># ls -lh /media/usb1/rootfs.ext4</span></span><br><span class="line">-rwxr-xr-x 1 root root 2.1G Aug  1  2020 /media/usb1/rootfs.ext4</span><br><span class="line">~<span class="comment"># cp /media/usb1/rootfs.ext4 /</span></span><br><span class="line">~<span class="comment"># sync /rootfs.ext4</span></span><br><span class="line">~<span class="comment"># diff -q /media/usb1/rootfs.ext4 /rootfs.ext4</span></span><br><span class="line">~<span class="comment"># reboot</span></span><br><span class="line">~<span class="comment"># diff -q /media/usb1/rootfs.ext4 /rootfs.ext4</span></span><br><span class="line">~<span class="comment"># echo $?</span></span><br><span class="line">0</span><br></pre></td></tr></table></figure>
 <h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
 <ol>
-<li>df、cp等命令对于产品开发者来说并不是那么可靠的，开发者正是要通过设计正确的系统来保证这些命令能正常工作</li>
-<li>不带参数的sync命令是不可靠的，若要确认某个文件写入到存储设备上，最好带上具体的路径</li>
-<li>若使用mkfs.XXX去格式化分区，这些命令都能正确识别分区大小，并格式化为恰当的文件系统</li>
+<li>
+<p>df、cp等命令对于产品开发者来说并不是那么可靠的，开发者正是要通过设计正确的系统来保证这些命令能正常工作</p>
+</li>
+<li>
+<p>不带参数的sync命令是不可靠的，若要确认某个文件写入到存储设备上，最好带上具体的路径。在《UNIX环境高级编程》第三版的3.13节中，对sync类函数有这样的描述：sync函数只是将所有修改过的块缓冲区排入写队列，然后就返回，它并不等待实际写磁盘操作结束。不带参数的sync命令调用这个函数。fsync函数只对由文件描述符fd指定的一个文件起作用，并且等待写磁盘操作结束才返回。fdatasync函数类似于fsync，但它只影响文件的数据部分。</p>
+</li>
+<li>
+<p>若使用mkfs.XXX去格式化分区，这些命令都能正确识别分区大小，并格式化为恰当的文件系统</p>
+</li>
 </ol>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<ul>
+<li>《UNIX环境高级编程》第三版</li>
+</ul>
 
       
     </div>
