@@ -17,19 +17,21 @@
   <meta http-equiv="window-target" content="_top">
   
   
-  <title>sfysoft</title>
-  <meta name="description" content="BSP|Kernel|Linux驱动|Ubuntu|Docker|Android">
-<meta property="og:type" content="website">
-<meta property="og:title" content="sfysoft">
-<meta property="og:url" content="https://oakchen.gitee.io/page/2/index.html">
+  <title>OpenSSL使用Ed25519算法签名 | sfysoft</title>
+  <meta name="description" content="Ed25519是一个公钥数字签名系统，以高性能及高安全性著称，其介绍可以参见这里，本文只描述如何利用OpenSSL来支持这一方法的签名和验证。所使用的环境包括Ubuntu 20.04 x64、OpenSSL 3.0.0 Alpha 13。  OpenSSL编译 目前，Ubuntu 20.04 x64系统上自带的OpenSSL版本为1.1.1f，而Ed25519算法，在OpenSSL 3.0.0以后">
+<meta name="keywords" content="信息安全,OpenSSL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenSSL使用Ed25519算法签名">
+<meta property="og:url" content="https://oakchen.gitee.io/2021/05/31/Sign-with-Ed25519-by-OpenSSL/index.html">
 <meta property="og:site_name" content="sfysoft">
-<meta property="og:description" content="BSP|Kernel|Linux驱动|Ubuntu|Docker|Android">
+<meta property="og:description" content="Ed25519是一个公钥数字签名系统，以高性能及高安全性著称，其介绍可以参见这里，本文只描述如何利用OpenSSL来支持这一方法的签名和验证。所使用的环境包括Ubuntu 20.04 x64、OpenSSL 3.0.0 Alpha 13。  OpenSSL编译 目前，Ubuntu 20.04 x64系统上自带的OpenSSL版本为1.1.1f，而Ed25519算法，在OpenSSL 3.0.0以后">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-05-31T08:57:48.773Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sfysoft">
-<meta name="twitter:description" content="BSP|Kernel|Linux驱动|Ubuntu|Docker|Android">
+<meta name="twitter:title" content="OpenSSL使用Ed25519算法签名">
+<meta name="twitter:description" content="Ed25519是一个公钥数字签名系统，以高性能及高安全性著称，其介绍可以参见这里，本文只描述如何利用OpenSSL来支持这一方法的签名和验证。所使用的环境包括Ubuntu 20.04 x64、OpenSSL 3.0.0 Alpha 13。  OpenSSL编译 目前，Ubuntu 20.04 x64系统上自带的OpenSSL版本为1.1.1f，而Ed25519算法，在OpenSSL 3.0.0以后">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://oakchen.gitee.io/page/2/index.html">
+  <link rel="canonical" href="https://oakchen.gitee.io/2021/05/31/Sign-with-Ed25519-by-OpenSSL/index.html">
   
     <link rel="alternate" href="/atom.xml" title="sfysoft" type="application/atom+xml">
   
@@ -293,292 +295,197 @@
 </aside>
 
   
-  <main class="main" role="main">
   
-  <div class="content article-list">
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Sign-with-Ed25519-by-OpenSSL" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
+    <div class="article-header">
+      
+        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/21/Samba-Issues-and-Solution/">Samba使用问题与解决方法</a>
+    <h1 class="article-title" itemprop="name">
+      OpenSSL使用Ed25519算法签名
     </h1>
   
 
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
+      
+      <div class="article-meta">
+        <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2019/06/21/Samba-Issues-and-Solution/" class="article-date">
-	  <time datetime="2019-06-21T07:08:12.000Z" itemprop="datePublished">6月 21</time>
+	<a href="/2021/05/31/Sign-with-Ed25519-by-OpenSSL/" class="article-date">
+	  <time datetime="2021-05-31T08:45:37.000Z" itemprop="datePublished">2021-05-31</time>
 	</a>
 </span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/软件使用/">软件使用</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/Samba/">Samba</a>, <a class="article-tag-link" href="/tags/软件使用/">软件使用</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/06/21/Samba-Issues-and-Solution/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 79(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/20/HomeGateway-Hidden-Username-Password/">家庭网关设备的隐藏账户和密码</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2019/06/20/HomeGateway-Hidden-Username-Password/" class="article-date">
-	  <time datetime="2019-06-20T10:41:38.000Z" itemprop="datePublished">6月 20</time>
-	</a>
-</span>
-    
+        
   <span class="article-category">
     <i class="icon icon-folder"></i>
     <a class="article-category-link" href="/categories/信息安全/">信息安全</a>
   </span>
 
-    
+        
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/信息安全/">信息安全</a>, <a class="article-tag-link" href="/tags/路由器/">路由器</a>
+	<a class="article-tag-link" href="/tags/OpenSSL/">OpenSSL</a>, <a class="article-tag-link" href="/tags/信息安全/">信息安全</a>
   </span>
 
 
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/06/20/HomeGateway-Hidden-Username-Password/#comments" class="article-comment-link">评论</a></span>
-    
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/05/31/Sign-with-Ed25519-by-OpenSSL/#comments" class="article-comment-link">评论</a></span>
+        
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.4k(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/28/APK-Build-Issue-Error-inflating-class/">APK编译错误之Error inflating class</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2019/05/28/APK-Build-Issue-Error-inflating-class/" class="article-date">
-	  <time datetime="2019-05-28T07:04:16.000Z" itemprop="datePublished">5月 28</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/软件开发/">软件开发</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/Android-Studio/">Android Studio</a>, <a class="article-tag-link" href="/tags/Android应用/">Android应用</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/05/28/APK-Build-Issue-Error-inflating-class/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.2k(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/24/APK-Build-Issue-Duplicate-class/">APK编译错误之Duplicate class</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2019/05/24/APK-Build-Issue-Duplicate-class/" class="article-date">
-	  <time datetime="2019-05-24T07:07:12.000Z" itemprop="datePublished">5月 24</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/软件开发/">软件开发</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/Android-Studio/">Android Studio</a>, <a class="article-tag-link" href="/tags/Android应用/">Android应用</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/05/24/APK-Build-Issue-Duplicate-class/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 645(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/22/Ubuntu-RemoteDesktop/">Ubuntu远程桌面连接</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2019/04/22/Ubuntu-RemoteDesktop/" class="article-date">
-	  <time datetime="2019-04-22T16:00:00.000Z" itemprop="datePublished">4月 23</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/Ubuntu/">Ubuntu</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/04/22/Ubuntu-RemoteDesktop/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 351(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 341(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
 	
 
-  </p>
-</article>
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>Ed25519是一个公钥数字签名系统，以高性能及高安全性著称，其介绍可以参见<a href="http://ed25519.cr.yp.to/index.html" target="_blank" rel="noopener">这里</a>，本文只描述如何利用OpenSSL来支持这一方法的签名和验证。所使用的环境包括Ubuntu 20.04 x64、OpenSSL 3.0.0 Alpha 13。</p>
+<h2 id="openssl编译"><a class="markdownIt-Anchor" href="#openssl编译"></a> OpenSSL编译</h2>
+<p>目前，Ubuntu 20.04 x64系统上自带的OpenSSL版本为1.1.1f，而Ed25519算法，在OpenSSL 3.0.0以后才得到支持，因此，需要自己编译源码安装新版本，已经验证的OpenSSL版本，对应于其git源码tag openssl-3.0.0-alpha13。编译安装过程如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/openssl/openssl.git</span><br><span class="line">$ <span class="built_in">cd</span> openssl</span><br><span class="line">$ git checkout -b v3.0.0-alpha13 openssl-3.0.0-alpha13</span><br><span class="line"><span class="comment"># 若要生成静态链接的可执行文件，使用./Configure -static</span></span><br><span class="line">$ ./Configure</span><br><span class="line">$ make</span><br><span class="line"><span class="comment"># 默认安装到/usr/local/[bin|include|lib|share|ssl]</span></span><br><span class="line">$ sudo make install</span><br><span class="line"><span class="comment"># 清除Shell先前缓冲执行文件路径</span></span><br><span class="line">$ <span class="built_in">hash</span> -r</span><br><span class="line"><span class="comment"># 验证OpenSSL版本，正常应该是输出OpenSSL 3.0.0-alpha13 11 Mar 2021这样的</span></span><br><span class="line">$ openssl version</span><br><span class="line">OpenSSL 3.0.0-alpha13 11 Mar 2021 (Library: OpenSSL 3.0.0-alpha13 11 Mar 2021)</span><br></pre></td></tr></table></figure>
+<h2 id="使用方法"><a class="markdownIt-Anchor" href="#使用方法"></a> 使用方法</h2>
+<h3 id="生成私钥"><a class="markdownIt-Anchor" href="#生成私钥"></a> 生成私钥</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ openssl genpkey -algorithm Ed25519 -out private.pem</span><br></pre></td></tr></table></figure>
+<h3 id="生成公钥"><a class="markdownIt-Anchor" href="#生成公钥"></a> 生成公钥</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ openssl pkey -<span class="keyword">in</span> private.pem -pubout -out public.pem</span><br></pre></td></tr></table></figure>
+<h3 id="以私钥签名binls"><a class="markdownIt-Anchor" href="#以私钥签名binls"></a> 以私钥签名/bin/ls</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ openssl pkeyutl -sign -inkey private.pem -out sig.dat -rawin -<span class="keyword">in</span> /bin/ls</span><br></pre></td></tr></table></figure>
+<h3 id="以公钥验证binls"><a class="markdownIt-Anchor" href="#以公钥验证binls"></a> 以公钥验证/bin/ls</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ openssl pkeyutl -verify -pubin -inkey public.pem -rawin -<span class="keyword">in</span> /bin/ls -sigfile sig.dat</span><br><span class="line">Signature Verified Successfully</span><br></pre></td></tr></table></figure>
 
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://oakchen.gitee.io/2021/05/31/Sign-with-Ed25519-by-OpenSSL/" title="OpenSSL使用Ed25519算法签名" target="_blank" rel="external">https://oakchen.gitee.io/2021/05/31/Sign-with-Ed25519-by-OpenSSL/</a>
+    </li>
     
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/21/Ubuntu-UsingPPA/">Ubuntu扩展软件包——PPA的使用</a>
-    </h1>
-  
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
 
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://gitee.com/OakChen" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://gitee.com/OakChen" target="_blank"><span class="text-dark">Oak Chen</span><small class="ml-1x">Software Developer</small></a></h3>
+        <div>试验、记录、总结</div>
+      </div>
+    </figure>
   </div>
+</div>
+
+
+    </div>
+  </article>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2019/04/21/Ubuntu-UsingPPA/" class="article-date">
-	  <time datetime="2019-04-21T16:00:00.000Z" itemprop="datePublished">4月 22</time>
-	</a>
-</span>
     
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a>
-  </span>
+  <section id="comments">
+  	
+  </section>
 
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
     
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/Ubuntu/">Ubuntu</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/04/21/Ubuntu-UsingPPA/#comments" class="article-comment-link">评论</a></span>
     
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 443(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
+    <li class="next">
+      <a href="/2021/05/26/How-to-build-perf/" title="如何给嵌入式Linux构建一个支持多特性的perf"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,qzone,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone,wechat,facebook,twitter"></div>
     
   </div>
-
+  </div>
+</nav>
   
-    
-    <nav class="bar bar-footer clearfix" data-stick-bottom>
-        <div class="bar-inner">
-        <div class="pager pull-left">
-            
-            <a class="extend prev" rel="prev" href="/"><i class="icon icon-angle-left"></i> 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-            
-            <a class="next disabled" href="javascript:;">下一页 <i class="icon icon-angle-right"></i></a>
-            
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="total-article bar-right">Page 2 of 2</div>
-        </div>
-    </nav>
-    
- 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -636,6 +543,8 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
 
 
 

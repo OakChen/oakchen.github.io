@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://oakchen.gitee.io/"/>
-  <updated>2021-05-26T15:10:52.573Z</updated>
+  <updated>2021-05-31T08:57:48.773Z</updated>
   <id>https://oakchen.gitee.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OpenSSL使用Ed25519算法签名</title>
+    <link href="https://oakchen.gitee.io/2021/05/31/Sign-with-Ed25519-by-OpenSSL/"/>
+    <id>https://oakchen.gitee.io/2021/05/31/Sign-with-Ed25519-by-OpenSSL/</id>
+    <published>2021-05-31T08:45:37.000Z</published>
+    <updated>2021-05-31T08:57:48.773Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ed25519是一个公钥数字签名系统，以高性能及高安全性著称，其介绍可以参见&lt;a href=&quot;http://ed25519.cr.yp.to/index.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;这里&lt;/a&gt;，本文只描述如何利用OpenSSL
+      
+    
+    </summary>
+    
+      <category term="信息安全" scheme="https://oakchen.gitee.io/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="信息安全" scheme="https://oakchen.gitee.io/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="OpenSSL" scheme="https://oakchen.gitee.io/tags/OpenSSL/"/>
+    
+  </entry>
   
   <entry>
     <title>如何给嵌入式Linux构建一个支持多特性的perf</title>
