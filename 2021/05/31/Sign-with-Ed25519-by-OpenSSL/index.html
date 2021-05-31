@@ -22,16 +22,16 @@
 <meta name="keywords" content="信息安全,OpenSSL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenSSL使用Ed25519算法签名">
-<meta property="og:url" content="https://oakchen.gitee.io/2021/05/31/Sign-with-Ed25519-by-OpenSSL/index.html">
+<meta property="og:url" content="https://www.sfysoft.com/2021/05/31/Sign-with-Ed25519-by-OpenSSL/index.html">
 <meta property="og:site_name" content="sfysoft">
 <meta property="og:description" content="Ed25519是一个公钥数字签名系统，以高性能及高安全性著称，其介绍可以参见这里，本文只描述如何利用OpenSSL来支持这一方法的签名和验证。所使用的环境包括Ubuntu 20.04 x64、OpenSSL 3.0.0 Alpha 13。  OpenSSL编译 目前，Ubuntu 20.04 x64系统上自带的OpenSSL版本为1.1.1f，而Ed25519算法，在OpenSSL 3.0.0以后">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-05-31T08:57:48.773Z">
+<meta property="og:updated_time" content="2021-05-31T09:00:48.658Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenSSL使用Ed25519算法签名">
 <meta name="twitter:description" content="Ed25519是一个公钥数字签名系统，以高性能及高安全性著称，其介绍可以参见这里，本文只描述如何利用OpenSSL来支持这一方法的签名和验证。所使用的环境包括Ubuntu 20.04 x64、OpenSSL 3.0.0 Alpha 13。  OpenSSL编译 目前，Ubuntu 20.04 x64系统上自带的OpenSSL版本为1.1.1f，而Ed25519算法，在OpenSSL 3.0.0以后">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://oakchen.gitee.io/2021/05/31/Sign-with-Ed25519-by-OpenSSL/index.html">
+  <link rel="canonical" href="https://www.sfysoft.com/2021/05/31/Sign-with-Ed25519-by-OpenSSL/index.html">
   
     <link rel="alternate" href="/atom.xml" title="sfysoft" type="application/atom+xml">
   
@@ -43,6 +43,8 @@
   
   
   
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css">
+  
 </head>
 
 
@@ -53,7 +55,7 @@
       
       
       <div class="profile-block text-center">
-        <a id="avatar" href="https://gitee.com/OakChen" target="_blank">
+        <a id="avatar" href="https://github.com/OakChen" target="_blank">
           <img class="img-circle img-rotate" src="/images/avatar.png" width="200" height="200">
         </a>
         <h2 id="name" class="hidden-xs hidden-sm">Oak Chen</h2>
@@ -374,7 +376,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://oakchen.gitee.io/2021/05/31/Sign-with-Ed25519-by-OpenSSL/" title="OpenSSL使用Ed25519算法签名" target="_blank" rel="external">https://oakchen.gitee.io/2021/05/31/Sign-with-Ed25519-by-OpenSSL/</a>
+      <a href="https://www.sfysoft.com/2021/05/31/Sign-with-Ed25519-by-OpenSSL/" title="OpenSSL使用Ed25519算法签名" target="_blank" rel="external">https://www.sfysoft.com/2021/05/31/Sign-with-Ed25519-by-OpenSSL/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -388,12 +390,12 @@
   <div class="panel-body">
     <figure class="media">
       <div class="media-left">
-        <a href="https://gitee.com/OakChen" target="_blank" class="img-burn thumb-sm visible-lg">
+        <a href="https://github.com/OakChen" target="_blank" class="img-burn thumb-sm visible-lg">
           <img src="/images/avatar.png" class="img-rounded w-full" alt="">
         </a>
       </div>
       <div class="media-body">
-        <h3 class="media-heading"><a href="https://gitee.com/OakChen" target="_blank"><span class="text-dark">Oak Chen</span><small class="ml-1x">Software Developer</small></a></h3>
+        <h3 class="media-heading"><a href="https://github.com/OakChen" target="_blank"><span class="text-dark">Oak Chen</span><small class="ml-1x">Software Developer</small></a></h3>
         <div>试验、记录、总结</div>
       </div>
     </figure>
@@ -407,6 +409,8 @@
     
   <section id="comments">
   	
+           
+    
   </section>
 
 
@@ -545,6 +549,25 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
    
+    
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css"> -->
+  <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+  <script src="https://unpkg.com/blueimp-md5@latest/js/md5.min.js"></script>
+  <script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'ab306904ff32116aa7fd',
+    clientSecret: '0ab19b144178905a1c97510bbbc499b63b3e7ff0',
+    repo: 'oakchen.github.io',
+    owner: 'OakChen',
+    admin: ['OakChen'],
+    id: location.pathname,
+    distractionFreeMode: true
+  })
+  gitalk.render('comments')
+  </script>
+
+      
+
 
 
 
