@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>APK编译错误之Error inflating class | sfysoft</title>
+  <meta name="description" content="这里记录的案例，虽说确实是编译原因导致的，但问题真正发生是在运行时。开发工具：Android Studio 3.4.1，运行环境：Android 5.1.1。  问题现象 话说为了选择个文件，使用了第三方库com.leon:lfilepickerlibrary:1.8.0，由于这个库和原来的项目同时引用了com.android.support:appcompat-v7，但版本不一致，可能出现Dup">
+<meta name="keywords" content="Android应用,Android Studio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="APK编译错误之Error inflating class">
+<meta property="og:url" content="https://www.sfysoft.com/2019/05/28/APK-Build-Issue-Error-inflating-class/index.html">
+<meta property="og:site_name" content="sfysoft">
+<meta property="og:description" content="这里记录的案例，虽说确实是编译原因导致的，但问题真正发生是在运行时。开发工具：Android Studio 3.4.1，运行环境：Android 5.1.1。  问题现象 话说为了选择个文件，使用了第三方库com.leon:lfilepickerlibrary:1.8.0，由于这个库和原来的项目同时引用了com.android.support:appcompat-v7，但版本不一致，可能出现Dup">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.sfysoft.com/2019/05/28/APK-Build-Issue-Error-inflating-class/add-library-dependency.png">
+<meta property="og:image" content="https://www.sfysoft.com/2019/05/28/APK-Build-Issue-Error-inflating-class/add-search-result.png">
+<meta property="og:updated_time" content="2023-08-02T00:59:54.689Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="APK编译错误之Error inflating class">
+<meta name="twitter:description" content="这里记录的案例，虽说确实是编译原因导致的，但问题真正发生是在运行时。开发工具：Android Studio 3.4.1，运行环境：Android 5.1.1。  问题现象 话说为了选择个文件，使用了第三方库com.leon:lfilepickerlibrary:1.8.0，由于这个库和原来的项目同时引用了com.android.support:appcompat-v7，但版本不一致，可能出现Dup">
+<meta name="twitter:image" content="https://www.sfysoft.com/2019/05/28/APK-Build-Issue-Error-inflating-class/add-library-dependency.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.sfysoft.com/2019/05/28/APK-Build-Issue-Error-inflating-class/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="sfysoft" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css">
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/OakChen" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Oak Chen</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Software Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/OakChen" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux使用/">Linux使用</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/">信息安全</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/服务器/">服务器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件使用/">软件使用</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android应用/">Android应用</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian/">Debian</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GCC/">GCC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gradle/">Gradle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenSSL/">OpenSSL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Samba/">Samba</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tool-Chain/">Tool Chain</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码质量/">代码质量</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络设备/">网络设备</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Android-Studio/" style="font-size: 13.5px;">Android Studio</a> <a href="/tags/Android应用/" style="font-size: 13.25px;">Android应用</a> <a href="/tags/Debian/" style="font-size: 13px;">Debian</a> <a href="/tags/GCC/" style="font-size: 13px;">GCC</a> <a href="/tags/Git/" style="font-size: 13px;">Git</a> <a href="/tags/Gradle/" style="font-size: 13px;">Gradle</a> <a href="/tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/OpenSSL/" style="font-size: 13px;">OpenSSL</a> <a href="/tags/Samba/" style="font-size: 13px;">Samba</a> <a href="/tags/Tool-Chain/" style="font-size: 14px;">Tool Chain</a> <a href="/tags/Ubuntu/" style="font-size: 13.75px;">Ubuntu</a> <a href="/tags/代码质量/" style="font-size: 13.25px;">代码质量</a> <a href="/tags/网络设备/" style="font-size: 13px;">网络设备</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发工具/">开发工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/10/ClangFormat-Practices/" class="title">ClangFormat实践</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-10T14:40:55.000Z" itemprop="datePublished">2022-05-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发工具/">开发工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/09/ClangFormat-Reference/" class="title">ClangFormat参考</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-09T14:43:55.000Z" itemprop="datePublished">2022-05-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/信息安全/">信息安全</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/05/31/Sign-with-Ed25519-by-OpenSSL/" class="title">OpenSSL使用Ed25519算法签名</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-05-31T08:45:37.000Z" itemprop="datePublished">2021-05-31</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发工具/">开发工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/05/26/How-to-build-perf/" class="title">如何给嵌入式Linux构建一个支持多特性的perf</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-05-26T10:58:26.000Z" itemprop="datePublished">2021-05-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Linux使用/">Linux使用</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/04/23/Ubuntu-Use-MTP/" class="title">Ubuntu上使用MTP传输文件</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-23T10:41:18.000Z" itemprop="datePublished">2021-04-23</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-APK-Build-Issue-Error-inflating-class" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      APK编译错误之Error inflating class
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/05/28/APK-Build-Issue-Error-inflating-class/" class="article-date">
+	  <time datetime="2019-05-28T07:04:16.000Z" itemprop="datePublished">2019-05-28</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/软件开发/">软件开发</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/Android-Studio/">Android Studio</a>, <a class="article-tag-link" href="/tags/Android应用/">Android应用</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/05/28/APK-Build-Issue-Error-inflating-class/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.2k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>这里记录的案例，虽说确实是编译原因导致的，但问题真正发生是在运行时。开发工具：Android Studio 3.4.1，运行环境：Android 5.1.1。</p>
+<h2 id="问题现象"><a class="markdownIt-Anchor" href="#问题现象"></a> 问题现象</h2>
+<p>话说为了选择个文件，使用了第三方库<a href="https://github.com/leonHua/LFilePicker" target="_blank" rel="noopener"><code>com.leon:lfilepickerlibrary:1.8.0</code></a>，由于这个库和原来的项目同时引用了<code>com.android.support:appcompat-v7</code>，但版本不一致，可能出现Duplicate class的问题，所以，使用排除传递依赖项的方法，排除了这个库对<code>com.android.support</code>的引用，关于Duplicate class的问题参考<a href="https://www.sfysoft.com/2019/05/24/APK-Build-Issue-Duplicate-class/">这里</a>。在初始的build.gradle里具有这样的配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">compileSdkVersion 28</span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        minSdkVersion 19</span><br><span class="line">        targetSdkVersion 28</span><br><span class="line">        versionCode 1</span><br><span class="line">        versionName &quot;1.0&quot;</span><br><span class="line">    &#125;</span><br><span class="line">dependencies &#123;</span><br><span class="line">    implementation fileTree(include: [&apos;*.jar&apos;], dir: &apos;libs&apos;)</span><br><span class="line">    implementation &apos;com.android.support:appcompat-v7:28.0.0&apos;</span><br><span class="line">    implementation &apos;com.android.support.constraint:constraint-layout:1.1.3&apos;</span><br><span class="line">    implementation(&apos;com.leon:lfilepickerlibrary:1.8.0&apos;) &#123;</span><br><span class="line">        exclude group: &apos;com.android.support&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译一切正常，安装到手机上运行并使用这个库提供的功能时，应用出现停止运行，查看logcat，具有如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">java.lang.RuntimeException: Unable to start activity ComponentInfo&#123;.../com.leon.lfilepickerlibrary.ui.LFilePickerActivity&#125;: android.view.InflateException: Binary XML file line #62: Error inflating class com.leon.lfilepickerlibrary.widget.EmptyRecyclerView&#125;</span><br><span class="line">...</span><br><span class="line">Caused by: android.view.InflateException: Binary XML file line #62: Error inflating class com.leon.lfilepickerlibrary.widget.EmptyRecyclerView</span><br><span class="line">...</span><br><span class="line">Caused by: java.lang.ClassNotFoundException: Didn&apos;t find class &quot;com.leon.lfilepickerlibrary.widget.EmptyRecyclerView&quot; on path: DexPathList...</span><br></pre></td></tr></table></figure>
+<h2 id="解决过程"><a class="markdownIt-Anchor" href="#解决过程"></a> 解决过程</h2>
+<ol>
+<li>
+<p>从<code>ClassNotFoundException</code>看起，使用JadX反编译了生成的apk，发现<code>com.leon.lfilepickerlibrary.widget.EmptyRecyclerView</code>确实存在于apk内，路径也完全一致，看来不是这个问题。</p>
+</li>
+<li>
+<p>在网上搜索<code>Apk ClassNotFoundException</code>和<code>Apk Error inflating class</code>看了一些相关的内容后，发现都和这里的不同。</p>
+</li>
+<li>
+<p>不得已，回到项目重新思考引用这个库的方式，怀疑可能是依赖存在问题，于是做了以下尝试：</p>
+<p>首先，删除了<code>exclude group: 'com.android.support'</code>这一段，这时，Android Studio会在<code>implementation 'com.android.support:appcompat-v7:28.0.0'</code>这一行上会显示红色波浪线，鼠标点击后，即时提示告知：“All com.android.support libraries must use the exact same version specification (mixing versions can lead to runtime crashes). Found versions 28.0.0, 25.0.0.”。可见，这个第三方库引用了<code>com.android.support 25.0.0</code>的版本。</p>
+<p>其次，根据提示，把<code>compileSdkVersion、targetSdkVersion、com.android.support:appcompat-v7</code>的版本都从28改到了25后，编译并运行，发现功能正常。</p>
+</li>
+<li>
+<p>推断依赖存在问题，那么，<a href="https://github.com/leonHua/LFilePicker" target="_blank" rel="noopener"><code>com.leon:lfilepickerlibrary:1.8.0</code></a>的依赖到底应该是怎样的呢？查看这个包的pom文件就可以知道了，在本地缓存里（一般是当前用户主目录的.gradle/caches目录下）搜索到对应的pom文件，查看依赖节具有如下内容：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">  &lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.android.support&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;appcompat-v7&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;25.0.0&lt;/version&gt;</span><br><span class="line">    &lt;scope&gt;compile&lt;/scope&gt;</span><br><span class="line">  &lt;/dependency&gt;</span><br><span class="line">  &lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.android.support&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;recyclerview-v7&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;25.0.0&lt;/version&gt;</span><br><span class="line">    &lt;scope&gt;compile&lt;/scope&gt;</span><br><span class="line">  &lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+<p>这里的内容显示：除了<code>appcompat-v7</code>模块外，这个库还依赖于<code>recyclerview-v7</code>模块，而使用<code>exclude group: 'com.android.support'</code>排除了所有groupId是<code>com.android.support</code>的模块。</p>
+</li>
+<li>
+<p>了解了原因后，解决起来就简单了，<code>compileSdkVersion、targetSdkVersion、com.android.support:appcompat-v7</code>仍使用28版本，但是在build.gradle的dependencies节里增加一行<code>implementation 'com.android.support:recyclerview-v7:28.0.0'</code>。这里，<code>recyclerview-v7</code>的版本应当和<code>appcompat-v7</code>的版本完全一致。最终，build.gradle中的dependencies按照下面的写法即可：</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    implementation fileTree(include: [&apos;*.jar&apos;], dir: &apos;libs&apos;)</span><br><span class="line">    implementation &apos;com.android.support:appcompat-v7:28.0.0&apos;</span><br><span class="line">    implementation &apos;com.android.support:recyclerview-v7:28.0.0&apos;</span><br><span class="line">    implementation &apos;com.android.support.constraint:constraint-layout:1.1.3&apos;</span><br><span class="line">    implementation(&apos;com.leon:lfilepickerlibrary:1.8.0&apos;) &#123;</span><br><span class="line">        exclude group: &apos;com.android.support&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>最后，这些模块都可以通过浏览<a href="https://maven.google.com" target="_blank" rel="noopener">https://maven.google.com</a>找到，也可以在Android Studio中找到并添加，操作路径是：选中相应的Project，按F4打开Project Structure，点击左侧的Dependencies，然后添加Library Dependency，在出现的对话框中输入<code>com.android.support</code>并搜索，搜索结果出来后，选中<code>recyclerview-v7</code>对应的版本即可添加，具体如下图：</li>
+</ol>
+<p><img src="add-library-dependency.png" alt="Add Library Dependency"></p>
+<p><img src="add-search-result.png" alt="Add Search Result"></p>
+<p>除此之外，不直接添加对<code>recyclerview-v7</code>的引用，而是仅排除可能产生冲突的模块也是可以的，使用exclude时指定module即可，在这里，就是如下列所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">implementation(&apos;com.leon:lfilepickerlibrary:1.8.0&apos;) &#123;</span><br><span class="line">    exclude group: &apos;com.android.support&apos;, module: &apos;appcompat-v7&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是这会导致引用了不同版本的<code>com.android.support</code>组的模块，因此，并不推荐这种方式。</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://www.sfysoft.com/2019/05/28/APK-Build-Issue-Error-inflating-class/" title="APK编译错误之Error inflating class" target="_blank" rel="external">https://www.sfysoft.com/2019/05/28/APK-Build-Issue-Error-inflating-class/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/OakChen" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/OakChen" target="_blank"><span class="text-dark">Oak Chen</span><small class="ml-1x">Software Developer</small></a></h3>
+        <div>试验、记录、总结</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+           
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2019/06/20/HomeGateway-Hidden-Username-Password/" title="家庭网关设备的隐藏账户和密码"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2019/05/24/APK-Build-Issue-Duplicate-class/" title="APK编译错误之Duplicate class"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,qzone,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone,wechat,facebook,twitter"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/OakChen" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2023 Oak Chen
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css"> -->
+  <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+  <script src="https://unpkg.com/blueimp-md5@latest/js/md5.min.js"></script>
+  <script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'ab306904ff32116aa7fd',
+    clientSecret: '0ab19b144178905a1c97510bbbc499b63b3e7ff0',
+    repo: 'oakchen.github.io',
+    owner: 'OakChen',
+    admin: ['OakChen'],
+    id: location.pathname,
+    distractionFreeMode: true
+  })
+  gitalk.render('comments')
+  </script>
+
+      
+
+
+
+
+
+
+
+</body>
+</html>

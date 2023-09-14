@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>使用df命令看到的分区大小是正确的吗？ | sfysoft</title>
+  <meta name="description" content="在使用Linux时，通常会用到df命令来查看磁盘挂载情况，那么df的输出结果可信吗？一般用户似乎不应怀疑，作者以前也从没怀疑过，直到发生了下面的这些事情。  df报告的分区大小比分区表定义的大时 在使用某芯片厂商的SDK开发产品时，检查设备上的eMMC使用情况看到有下面的情况： 123456789~# df -Th -x tmpfs -x devtmpfsFilesystem      Type">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用df命令看到的分区大小是正确的吗？">
+<meta property="og:url" content="https://www.sfysoft.com/2020/08/11/Is-fs-size-correct/index.html">
+<meta property="og:site_name" content="sfysoft">
+<meta property="og:description" content="在使用Linux时，通常会用到df命令来查看磁盘挂载情况，那么df的输出结果可信吗？一般用户似乎不应怀疑，作者以前也从没怀疑过，直到发生了下面的这些事情。  df报告的分区大小比分区表定义的大时 在使用某芯片厂商的SDK开发产品时，检查设备上的eMMC使用情况看到有下面的情况： 123456789~# df -Th -x tmpfs -x devtmpfsFilesystem      Type">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2023-09-14T05:55:05.355Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用df命令看到的分区大小是正确的吗？">
+<meta name="twitter:description" content="在使用Linux时，通常会用到df命令来查看磁盘挂载情况，那么df的输出结果可信吗？一般用户似乎不应怀疑，作者以前也从没怀疑过，直到发生了下面的这些事情。  df报告的分区大小比分区表定义的大时 在使用某芯片厂商的SDK开发产品时，检查设备上的eMMC使用情况看到有下面的情况： 123456789~# df -Th -x tmpfs -x devtmpfsFilesystem      Type">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.sfysoft.com/2020/08/11/Is-fs-size-correct/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="sfysoft" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css">
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/OakChen" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Oak Chen</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Software Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/OakChen" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux使用/">Linux使用</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/">信息安全</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/服务器/">服务器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件使用/">软件使用</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android应用/">Android应用</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian/">Debian</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GCC/">GCC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gradle/">Gradle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenSSL/">OpenSSL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Samba/">Samba</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tool-Chain/">Tool Chain</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码质量/">代码质量</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络设备/">网络设备</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Android-Studio/" style="font-size: 13.5px;">Android Studio</a> <a href="/tags/Android应用/" style="font-size: 13.25px;">Android应用</a> <a href="/tags/Debian/" style="font-size: 13px;">Debian</a> <a href="/tags/GCC/" style="font-size: 13px;">GCC</a> <a href="/tags/Git/" style="font-size: 13px;">Git</a> <a href="/tags/Gradle/" style="font-size: 13px;">Gradle</a> <a href="/tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/OpenSSL/" style="font-size: 13px;">OpenSSL</a> <a href="/tags/Samba/" style="font-size: 13px;">Samba</a> <a href="/tags/Tool-Chain/" style="font-size: 14px;">Tool Chain</a> <a href="/tags/Ubuntu/" style="font-size: 13.75px;">Ubuntu</a> <a href="/tags/代码质量/" style="font-size: 13.25px;">代码质量</a> <a href="/tags/网络设备/" style="font-size: 13px;">网络设备</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发工具/">开发工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/10/ClangFormat-Practices/" class="title">ClangFormat实践</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-10T14:40:55.000Z" itemprop="datePublished">2022-05-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发工具/">开发工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/09/ClangFormat-Reference/" class="title">ClangFormat参考</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-09T14:43:55.000Z" itemprop="datePublished">2022-05-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/信息安全/">信息安全</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/05/31/Sign-with-Ed25519-by-OpenSSL/" class="title">OpenSSL使用Ed25519算法签名</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-05-31T08:45:37.000Z" itemprop="datePublished">2021-05-31</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发工具/">开发工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/05/26/How-to-build-perf/" class="title">如何给嵌入式Linux构建一个支持多特性的perf</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-05-26T10:58:26.000Z" itemprop="datePublished">2021-05-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Linux使用/">Linux使用</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/04/23/Ubuntu-Use-MTP/" class="title">Ubuntu上使用MTP传输文件</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-23T10:41:18.000Z" itemprop="datePublished">2021-04-23</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Is-fs-size-correct" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用df命令看到的分区大小是正确的吗？
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/08/11/Is-fs-size-correct/" class="article-date">
+	  <time datetime="2020-08-11T12:43:06.000Z" itemprop="datePublished">2020-08-11</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/操作系统/">操作系统</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/Linux/">Linux</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/08/11/Is-fs-size-correct/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.5k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 10(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>在使用Linux时，通常会用到df命令来查看磁盘挂载情况，那么df的输出结果可信吗？一般用户似乎不应怀疑，作者以前也从没怀疑过，直到发生了下面的这些事情。</p>
+<h2 id="df报告的分区大小比分区表定义的大时"><a class="markdownIt-Anchor" href="#df报告的分区大小比分区表定义的大时"></a> df报告的分区大小比分区表定义的大时</h2>
+<p>在使用某芯片厂商的SDK开发产品时，检查设备上的eMMC使用情况看到有下面的情况：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">~<span class="comment"># df -Th -x tmpfs -x devtmpfs</span></span><br><span class="line">Filesystem      Type  Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/root       ext4  1.9G  622M  1.1G  36% /</span><br><span class="line">/dev/mmcblk0p36 vfat  1.0G     0  1.0G   0% /bluetooth</span><br><span class="line">/dev/mmcblk0p25 vfat   95M   19M   77M  20% /firmware</span><br><span class="line">/dev/mmcblk0p26 ext4   12M  4.2M  7.4M  36% /dsp</span><br><span class="line">/dev/mmcblk0p42 ext4   28M  108K   27M   1% /persist</span><br><span class="line">/dev/mmcblk0p41 ext4   58M  3.1M   54M   6% /cache</span><br><span class="line">/dev/mmcblk0p50 ext4  3.4G  1.4G  2.0G  41% /data</span><br></pre></td></tr></table></figure>
+<p>一个名为bluetooth的分区竟然分配了1G的空间，那么，这里面究竟包含了什么呢？使用<code>ls -a</code>命令查看<code>/bluetooth</code>目录没有任何内容。回看厂商烧录工具使用的配置文件时，发现有这样的配置：</p>
+<p><code>&lt;program SECTOR_SIZE_IN_BYTES=&quot;512&quot; file_sector_offset=&quot;0&quot; filename=&quot;BTFM.bin&quot; label=&quot;bluetooth&quot; num_partition_sectors=&quot;2047&quot; partofsingleimage=&quot;false&quot; physical_partition_number=&quot;0&quot; readbackverify=&quot;false&quot; size_in_KB=&quot;1023.5&quot; sparse=&quot;false&quot; start_byte_hex=&quot;0xd8468000&quot; start_sector=&quot;7086912&quot; /&gt;</code></p>
+<p>从描述上看这是个存放Bluetooth Firmware文件的分区，但定义的分区大小只有1023.5K，占用2047个扇区，这显然与df的输出不匹配，那这个分区的信息被Linux Kernel识别为怎样的？为此，做了下面的一系列试验：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">~<span class="comment"># cat /sys/class/block/mmcblk0p36/size         # 查看mmcblk0p36的扇区数</span></span><br><span class="line">2048</span><br><span class="line">~<span class="comment"># cat /sys/class/block/mmcblk0p36/start        # 查看mmcblk0p36的起始扇区</span></span><br><span class="line">7086912</span><br><span class="line">~<span class="comment"># ls -Slh /usr/lib64/ | head -n 2              # 寻找一个稍大的文件</span></span><br><span class="line">total 326M</span><br><span class="line">-rw-r--r--  1 root root  56M Jul 31  2020 libQt5Bootstrap.a</span><br><span class="line">~<span class="comment"># cp /usr/lib64/libQt5Bootstrap.a /bluetooth/  # 将文件复制到/bluetooth目录</span></span><br><span class="line">~<span class="comment"># ls -lh /bluetooth/</span></span><br><span class="line">total 56M</span><br><span class="line">-rwxr-xr-x 1 root root 56M Aug 20  2019 libQt5Bootstrap.a</span><br><span class="line">~<span class="comment"># diff /usr/lib64/libQt5Bootstrap.a /bluetooth/libQt5Bootst&gt;</span></span><br><span class="line">~<span class="comment"># sync</span></span><br><span class="line">~<span class="comment"># diff /usr/lib64/libQt5Bootstrap.a /bluetooth/libQt5Bootstrap.a</span></span><br><span class="line">~<span class="comment"># sync /bluetooth/libQt5Bootstrap.a</span></span><br><span class="line">sync: error syncing <span class="string">'/bluetooth/libQt5Bootstrap.a'</span>: Input/output error</span><br><span class="line">~<span class="comment"># diff /usr/lib64/libQt5Bootstrap.a /bluetooth/libQt5Bootstrap.a</span></span><br><span class="line">~<span class="comment"># echo $?</span></span><br><span class="line">0</span><br><span class="line">~<span class="comment"># reboot</span></span><br><span class="line">~<span class="comment"># diff -q /usr/lib64/libQt5Bootstrap.a /bluetooth/libQt5Bootstrap.a</span></span><br><span class="line">Files /usr/lib64/libQt5Bootstrap.a and /bluetooth/libQt5Bootstrap.a differ</span><br></pre></td></tr></table></figure>
+<p>从上面的测试中可以看到，cat命令读到的起始扇区能与配置文件中对应，但读到的扇区数多了1个扇区，猜测是扇区对齐导致。接下来通过复制大于分区表大小的文件进行试验，cp命令的输出表明复制成功，将原文件与目标文件比较，diff命令的输出表明文件内容一致，考虑到Linux的缓冲机制，文件并不一定写入了eMMC，于是又执行了一遍sync命令后再次比较，diff的输出仍旧表明文件内容一致，但给sync命令指定目标文件时，sync给出了一条错误消息，这表明不能把文件刷写到eMMC。继续比较，diff的输出仍旧表明文件内容一致，可见，文件始终是保留在缓冲区里，并没有写入到eMMC。为验证这一观点，将设备重启后再度比较，这次diff报了两个文件是不同的。</p>
+<p>看来，mmcblk0p36分区确实只有2048个扇区，无法写入这么大的文件，那么，为什么df命令报出来是1G的，想来只有配置文件中的BTFM.bin导致的了，在Ubuntu上使用file命令查看BTFM.bin：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ file BTFM.bin</span><br><span class="line">BTFM.bin: DOS/MBR boot sector, code offset 0x3c+2, OEM-ID <span class="string">"MSDOS5.0"</span>, sectors/cluster 32, root entries 512, Media descriptor 0xf8, sectors/FAT 257, sectors/track 63, heads 255, sectors 2097152 (volumes &gt; 32 MB) , reserved 0x1, serial number 0xbc614e, unlabeled, FAT (16 bit)</span><br></pre></td></tr></table></figure>
+<p>file命令报告BTFM.bin的总扇区数有2097152个，以512字节为1扇区，2097152个扇区数恰巧是1G的空间，到此基本上可以确定是这个BTFM.bin导致的问题，当它写入设备的eMMC后，Linux从相应的分区读取了这些数据作为文件系统信息，并据此挂载，于是df等使用了/proc/self/mountinfo数据的程序都认为此分区有1G空间，但在实际写入时，Kernel却知道没有足够的扇区来存放数据，于是报了错误。</p>
+<p>修复此问题也很简单，只需要提供一个大小匹配实际的BTFM.bin就可以了，以Kernel报的2048个扇区为准，在Ubuntu上重新生成一个用于烧录的vfat.bin文件的过程如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ dd <span class="keyword">if</span>=/dev/zero of=vfat.bin bs=512 count=2048 <span class="comment"># 产生一个2048个扇区大小的文件</span></span><br><span class="line">$ mkfs.vfat -s 32 -r 512 vfat.bin               <span class="comment"># 将此文件格式化为vfat格式</span></span><br><span class="line">mkfs.fat 4.1 (2017-01-24)</span><br><span class="line">$ file vfat.bin</span><br><span class="line">vfat.bin: DOS/MBR boot sector, code offset 0x3c+2, OEM-ID <span class="string">"mkfs.fat"</span>, sectors/cluster 32, root entries 512, sectors 2048 (volumes &lt;=32 MB) , Media descriptor 0xf8, sectors/FAT 1, sectors/track 32, heads 64, serial number 0x51a31e42, unlabeled, FAT (12 bit)</span><br><span class="line">$ mkdir vfat/</span><br><span class="line">$ sudo mount -t vfat -o loop vfat.bin vfat</span><br><span class="line">$ mkdir btfm/</span><br><span class="line">$ sudo mount -t vfat -o loop BTFM.bin btfm/</span><br><span class="line">$ <span class="comment">#sudo cp btfm/* vfat/        # 若原bin文件包含了内容，应当复制到新的bin文件中</span></span><br><span class="line">$ sync vfat/</span><br><span class="line">$ sudo umount vfat             <span class="comment"># 此后vfat.bin将包含BTFM.bin的内容，并具有适当大小</span></span><br><span class="line">$ sudo umount btfm</span><br></pre></td></tr></table></figure>
+<p>为什么BTFM.bin是16位的FAT表，而vfat.bin是12位的FAT表，因为2048个扇区的空间太小，已经不足以使用16位的FAT表。将新生成的vfat.bin替换为原BTFM.bin并刷写到设备验证，可以看到df命令将输出除去文件系统自身信息后的正确大小，cp命令复制超出分区表空间大小的文件到分区时也将报错：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">~<span class="comment"># df -Th -x tmpfs -x devtmpfs</span></span><br><span class="line">Filesystem      Type  Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/root       ext4  1.9G  622M  1.1G  36% /</span><br><span class="line">/dev/mmcblk0p36 vfat  992K   16K  976K   2% /bluetooth</span><br><span class="line">/dev/mmcblk0p25 vfat   95M   19M   77M  20% /firmware</span><br><span class="line">/dev/mmcblk0p26 ext4   12M  4.2M  7.4M  36% /dsp</span><br><span class="line">/dev/mmcblk0p50 ext4  3.4G  1.4G  2.0G  41% /data</span><br><span class="line">/dev/mmcblk0p41 ext4   58M  3.1M   54M   6% /cache</span><br><span class="line">/dev/mmcblk0p42 ext4   28M  108K   27M   1% /persist</span><br><span class="line"></span><br><span class="line">~<span class="comment"># cp /usr/lib64/libQt5Bootstrap.a /bluetooth/</span></span><br><span class="line">cp: error writing <span class="string">'/bluetooth/libQt5Bootstrap.a'</span>: No space left on device</span><br></pre></td></tr></table></figure>
+<h2 id="df报告的分区大小比分区表定义的小时"><a class="markdownIt-Anchor" href="#df报告的分区大小比分区表定义的小时"></a> df报告的分区大小比分区表定义的小时</h2>
+<p>在上面，已经看到了df报告的分区大小比分区表定义的大时是怎样的情况，当df报告的分区大小比分区表中小时，又将如何？正巧的是，/分区就是这样的一种情况，查看烧录工具的配置文件可以看到这样的配置：</p>
+<p><code>&lt;program SECTOR_SIZE_IN_BYTES=&quot;512&quot; file_sector_offset=&quot;0&quot; filename=&quot;rootfs.ext4&quot; label=&quot;system&quot; num_partition_sectors=&quot;6291455&quot; partofsingleimage=&quot;false&quot; physical_partition_number=&quot;0&quot; readbackverify=&quot;false&quot; size_in_KB=&quot;3145727.5&quot; sparse=&quot;false&quot; start_byte_hex=&quot;0xcf3a000&quot; start_sector=&quot;424400&quot; /&gt;</code></p>
+<p>配置文件里定义的大小是6291455个扇区，3145727.5KB，也就是2.99G，查看sys文件系统中的信息验证：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mount | grep "/ "</span></span><br><span class="line">/dev/mmcblk0p18 on / <span class="built_in">type</span> ext4 (rw,relatime,data=ordered)</span><br><span class="line"><span class="comment"># cat /sys/class/block/mmcblk0p18/size</span></span><br><span class="line">6291456</span><br></pre></td></tr></table></figure>
+<p>同样是比配置文件中定义的多了1个扇区，但df命令报告的总大小是1.9G，用掉了622M，若以2.99G为限，剩余应有（2.99G-622M）大小，那此时能复制超过1.9G的文件进去吗？试验一下就知道了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~<span class="comment"># ls -lh /media/usb1/rootfs.ext4</span></span><br><span class="line">-rwxr-xr-x 1 root root 2.1G Aug  1  2020 /media/usb1/rootfs.ext4</span><br><span class="line">~<span class="comment"># cp /media/usb1/rootfs.ext4 /</span></span><br><span class="line">cp: error writing <span class="string">'/rootfs.ext4'</span>: No space left on device</span><br></pre></td></tr></table></figure>
+<p>cp命令报告没有足够的空间来复制，有1G多的空间丢失了。</p>
+<p>要修复此问题，仍旧是生成正确大小的文件系统镜像，对于ext4文件系统镜像来讲，可以用Android SDK中的make_ext4fs命令来生成的，此例中，如果要利用上分区表定义的大小，在Ubuntu上这样操作就可以了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir rootfs</span><br><span class="line">$ sudo mount -t ext4 -o loop rootfs.ext4 rootfs</span><br><span class="line">$ sudo make_ext4fs -l 3145728K rootfs-raw.ext4 rootfs</span><br></pre></td></tr></table></figure>
+<p>上述命令使用原文件系统镜像再生成rootfs-raw.ext4文件，并指定对应到6291456个扇区的大小，产生的rootfs-raw.ext4会有3G大，若烧写工具支持Android Sparse格式，则可以使用<code>sudo make_ext4fs -s -l 3145728K rootfs-sparse.ext4 rootfs</code>这样的命令产生一个较小的文件。将这个文件刷回设备上验证，可以看到df命令将输出除去文件系统自身信息后的正确大小，cp命令复制2.1G大文件到/分区时正确完成：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">~<span class="comment"># df -Th -x tmpfs -x devtmpfs</span></span><br><span class="line">Filesystem      Type  Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/root       ext4  3.0G  646M  2.3G  22% /</span><br><span class="line">/dev/mmcblk0p36 vfat  1.0G   56M  969M   6% /bluetooth</span><br><span class="line">/dev/mmcblk0p26 ext4   12M  4.2M  7.4M  36% /dsp</span><br><span class="line">/dev/mmcblk0p42 ext4   28M  108K   27M   1% /persist</span><br><span class="line">/dev/mmcblk0p25 vfat   95M   19M   77M  20% /firmware</span><br><span class="line">/dev/mmcblk0p41 ext4   58M  3.1M   54M   6% /cache</span><br><span class="line">/dev/mmcblk0p50 ext4  3.4G  1.4G  2.0G  41% /data</span><br><span class="line">/dev/sda1       vfat   15G   15G  199M  99% /media/usb1</span><br><span class="line">~<span class="comment"># ls -lh /media/usb1/rootfs.ext4</span></span><br><span class="line">-rwxr-xr-x 1 root root 2.1G Aug  1  2020 /media/usb1/rootfs.ext4</span><br><span class="line">~<span class="comment"># cp /media/usb1/rootfs.ext4 /</span></span><br><span class="line">~<span class="comment"># sync /rootfs.ext4</span></span><br><span class="line">~<span class="comment"># diff -q /media/usb1/rootfs.ext4 /rootfs.ext4</span></span><br><span class="line">~<span class="comment"># reboot</span></span><br><span class="line">~<span class="comment"># diff -q /media/usb1/rootfs.ext4 /rootfs.ext4</span></span><br><span class="line">~<span class="comment"># echo $?</span></span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<ol>
+<li>
+<p>df、cp等命令对于产品开发者来说并不是那么可靠的，开发者正是要通过设计正确的系统来保证这些命令能正常工作</p>
+</li>
+<li>
+<p>不带参数的sync命令是不可靠的，若要确认某个文件写入到存储设备上，最好带上具体的路径。在《UNIX环境高级编程》第三版的3.13节中，对sync类函数有这样的描述：sync函数只是将所有修改过的块缓冲区排入写队列，然后就返回，它并不等待实际写磁盘操作结束。不带参数的sync命令调用这个函数。fsync函数只对由文件描述符fd指定的一个文件起作用，并且等待写磁盘操作结束才返回。fdatasync函数类似于fsync，但它只影响文件的数据部分。</p>
+</li>
+<li>
+<p>若使用mkfs.XXX去格式化分区，这些命令都能正确识别分区大小，并格式化为恰当的文件系统</p>
+</li>
+</ol>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<ul>
+<li>《UNIX环境高级编程》第三版</li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://www.sfysoft.com/2020/08/11/Is-fs-size-correct/" title="使用df命令看到的分区大小是正确的吗？" target="_blank" rel="external">https://www.sfysoft.com/2020/08/11/Is-fs-size-correct/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/OakChen" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/OakChen" target="_blank"><span class="text-dark">Oak Chen</span><small class="ml-1x">Software Developer</small></a></h3>
+        <div>试验、记录、总结</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+           
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2021/04/06/AS-Issues-and-Solution/" title="使用Android Studio的那些问题与解决办法"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2020/07/29/Git-Issues-and-Solution/" title="Git使用问题与解决方法"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,qzone,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone,wechat,facebook,twitter"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/OakChen" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2023 Oak Chen
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css"> -->
+  <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+  <script src="https://unpkg.com/blueimp-md5@latest/js/md5.min.js"></script>
+  <script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'ab306904ff32116aa7fd',
+    clientSecret: '0ab19b144178905a1c97510bbbc499b63b3e7ff0',
+    repo: 'oakchen.github.io',
+    owner: 'OakChen',
+    admin: ['OakChen'],
+    id: location.pathname,
+    distractionFreeMode: true
+  })
+  gitalk.render('comments')
+  </script>
+
+      
+
+
+
+
+
+
+
+</body>
+</html>

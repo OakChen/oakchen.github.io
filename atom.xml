@@ -5,9 +5,9 @@
   <subtitle>Oak Chen的个人博客</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://oakchen.gitee.io/"/>
+  <link href="https://www.sfysoft.com/"/>
   <updated>2023-09-14T05:55:05.339Z</updated>
-  <id>https://oakchen.gitee.io/</id>
+  <id>https://www.sfysoft.com/</id>
   
   <author>
     <name>Oak Chen</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>ClangFormat实践</title>
-    <link href="https://oakchen.gitee.io/2022/05/10/ClangFormat-Practices/"/>
-    <id>https://oakchen.gitee.io/2022/05/10/ClangFormat-Practices/</id>
+    <link href="https://www.sfysoft.com/2022/05/10/ClangFormat-Practices/"/>
+    <id>https://www.sfysoft.com/2022/05/10/ClangFormat-Practices/</id>
     <published>2022-05-10T14:40:55.000Z</published>
     <updated>2023-09-14T05:55:05.339Z</updated>
     
@@ -33,19 +33,19 @@
     
     </summary>
     
-      <category term="开发工具" scheme="https://oakchen.gitee.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="开发工具" scheme="https://www.sfysoft.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Tool Chain" scheme="https://oakchen.gitee.io/tags/Tool-Chain/"/>
+      <category term="Tool Chain" scheme="https://www.sfysoft.com/tags/Tool-Chain/"/>
     
-      <category term="代码质量" scheme="https://oakchen.gitee.io/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/"/>
+      <category term="代码质量" scheme="https://www.sfysoft.com/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/"/>
     
   </entry>
   
   <entry>
     <title>ClangFormat参考</title>
-    <link href="https://oakchen.gitee.io/2022/05/09/ClangFormat-Reference/"/>
-    <id>https://oakchen.gitee.io/2022/05/09/ClangFormat-Reference/</id>
+    <link href="https://www.sfysoft.com/2022/05/09/ClangFormat-Reference/"/>
+    <id>https://www.sfysoft.com/2022/05/09/ClangFormat-Reference/</id>
     <published>2022-05-09T14:43:55.000Z</published>
     <updated>2023-09-14T05:55:05.343Z</updated>
     
@@ -59,19 +59,19 @@
     
     </summary>
     
-      <category term="开发工具" scheme="https://oakchen.gitee.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="开发工具" scheme="https://www.sfysoft.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Tool Chain" scheme="https://oakchen.gitee.io/tags/Tool-Chain/"/>
+      <category term="Tool Chain" scheme="https://www.sfysoft.com/tags/Tool-Chain/"/>
     
-      <category term="代码质量" scheme="https://oakchen.gitee.io/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/"/>
+      <category term="代码质量" scheme="https://www.sfysoft.com/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/"/>
     
   </entry>
   
   <entry>
     <title>OpenSSL使用Ed25519算法签名</title>
-    <link href="https://oakchen.gitee.io/2021/05/31/Sign-with-Ed25519-by-OpenSSL/"/>
-    <id>https://oakchen.gitee.io/2021/05/31/Sign-with-Ed25519-by-OpenSSL/</id>
+    <link href="https://www.sfysoft.com/2021/05/31/Sign-with-Ed25519-by-OpenSSL/"/>
+    <id>https://www.sfysoft.com/2021/05/31/Sign-with-Ed25519-by-OpenSSL/</id>
     <published>2021-05-31T08:45:37.000Z</published>
     <updated>2023-09-14T05:55:05.355Z</updated>
     
@@ -84,17 +84,17 @@
     
     </summary>
     
-      <category term="信息安全" scheme="https://oakchen.gitee.io/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+      <category term="信息安全" scheme="https://www.sfysoft.com/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
     
     
-      <category term="OpenSSL" scheme="https://oakchen.gitee.io/tags/OpenSSL/"/>
+      <category term="OpenSSL" scheme="https://www.sfysoft.com/tags/OpenSSL/"/>
     
   </entry>
   
   <entry>
     <title>如何给嵌入式Linux构建一个支持多特性的perf</title>
-    <link href="https://oakchen.gitee.io/2021/05/26/How-to-build-perf/"/>
-    <id>https://oakchen.gitee.io/2021/05/26/How-to-build-perf/</id>
+    <link href="https://www.sfysoft.com/2021/05/26/How-to-build-perf/"/>
+    <id>https://www.sfysoft.com/2021/05/26/How-to-build-perf/</id>
     <published>2021-05-26T10:58:26.000Z</published>
     <updated>2023-09-14T05:55:05.351Z</updated>
     
@@ -108,17 +108,17 @@
     
     </summary>
     
-      <category term="开发工具" scheme="https://oakchen.gitee.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="开发工具" scheme="https://www.sfysoft.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Tool Chain" scheme="https://oakchen.gitee.io/tags/Tool-Chain/"/>
+      <category term="Tool Chain" scheme="https://www.sfysoft.com/tags/Tool-Chain/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu上使用MTP传输文件</title>
-    <link href="https://oakchen.gitee.io/2021/04/23/Ubuntu-Use-MTP/"/>
-    <id>https://oakchen.gitee.io/2021/04/23/Ubuntu-Use-MTP/</id>
+    <link href="https://www.sfysoft.com/2021/04/23/Ubuntu-Use-MTP/"/>
+    <id>https://www.sfysoft.com/2021/04/23/Ubuntu-Use-MTP/</id>
     <published>2021-04-23T10:41:18.000Z</published>
     <updated>2023-09-14T05:55:05.359Z</updated>
     
@@ -132,17 +132,17 @@
     
     </summary>
     
-      <category term="Linux使用" scheme="https://oakchen.gitee.io/categories/Linux%E4%BD%BF%E7%94%A8/"/>
+      <category term="Linux使用" scheme="https://www.sfysoft.com/categories/Linux%E4%BD%BF%E7%94%A8/"/>
     
     
-      <category term="Ubuntu" scheme="https://oakchen.gitee.io/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="https://www.sfysoft.com/tags/Ubuntu/"/>
     
   </entry>
   
   <entry>
     <title>使用Android Studio的那些问题与解决办法</title>
-    <link href="https://oakchen.gitee.io/2021/04/06/AS-Issues-and-Solution/"/>
-    <id>https://oakchen.gitee.io/2021/04/06/AS-Issues-and-Solution/</id>
+    <link href="https://www.sfysoft.com/2021/04/06/AS-Issues-and-Solution/"/>
+    <id>https://www.sfysoft.com/2021/04/06/AS-Issues-and-Solution/</id>
     <published>2021-04-06T11:41:05.000Z</published>
     <updated>2023-09-14T05:55:05.331Z</updated>
     
@@ -155,21 +155,21 @@
     
     </summary>
     
-      <category term="开发工具" scheme="https://oakchen.gitee.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="开发工具" scheme="https://www.sfysoft.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Android Studio" scheme="https://oakchen.gitee.io/tags/Android-Studio/"/>
+      <category term="Android Studio" scheme="https://www.sfysoft.com/tags/Android-Studio/"/>
     
-      <category term="Gradle" scheme="https://oakchen.gitee.io/tags/Gradle/"/>
+      <category term="Gradle" scheme="https://www.sfysoft.com/tags/Gradle/"/>
     
-      <category term="Tool Chain" scheme="https://oakchen.gitee.io/tags/Tool-Chain/"/>
+      <category term="Tool Chain" scheme="https://www.sfysoft.com/tags/Tool-Chain/"/>
     
   </entry>
   
   <entry>
     <title>使用df命令看到的分区大小是正确的吗？</title>
-    <link href="https://oakchen.gitee.io/2020/08/11/Is-fs-size-correct/"/>
-    <id>https://oakchen.gitee.io/2020/08/11/Is-fs-size-correct/</id>
+    <link href="https://www.sfysoft.com/2020/08/11/Is-fs-size-correct/"/>
+    <id>https://www.sfysoft.com/2020/08/11/Is-fs-size-correct/</id>
     <published>2020-08-11T12:43:06.000Z</published>
     <updated>2023-09-14T05:55:05.355Z</updated>
     
@@ -183,17 +183,17 @@
     
     </summary>
     
-      <category term="操作系统" scheme="https://oakchen.gitee.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+      <category term="操作系统" scheme="https://www.sfysoft.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
     
-      <category term="Linux" scheme="https://oakchen.gitee.io/tags/Linux/"/>
+      <category term="Linux" scheme="https://www.sfysoft.com/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Git使用问题与解决方法</title>
-    <link href="https://oakchen.gitee.io/2020/07/29/Git-Issues-and-Solution/"/>
-    <id>https://oakchen.gitee.io/2020/07/29/Git-Issues-and-Solution/</id>
+    <link href="https://www.sfysoft.com/2020/07/29/Git-Issues-and-Solution/"/>
+    <id>https://www.sfysoft.com/2020/07/29/Git-Issues-and-Solution/</id>
     <published>2020-07-29T21:43:06.000Z</published>
     <updated>2023-09-14T05:56:09.710Z</updated>
     
@@ -207,19 +207,19 @@
     
     </summary>
     
-      <category term="开发工具" scheme="https://oakchen.gitee.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="开发工具" scheme="https://www.sfysoft.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Tool Chain" scheme="https://oakchen.gitee.io/tags/Tool-Chain/"/>
+      <category term="Tool Chain" scheme="https://www.sfysoft.com/tags/Tool-Chain/"/>
     
-      <category term="Git" scheme="https://oakchen.gitee.io/tags/Git/"/>
+      <category term="Git" scheme="https://www.sfysoft.com/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>GCC交叉编译器的命名与用法</title>
-    <link href="https://oakchen.gitee.io/2019/07/15/Cross-Build-Compiler-Name-Usage/"/>
-    <id>https://oakchen.gitee.io/2019/07/15/Cross-Build-Compiler-Name-Usage/</id>
+    <link href="https://www.sfysoft.com/2019/07/15/Cross-Build-Compiler-Name-Usage/"/>
+    <id>https://www.sfysoft.com/2019/07/15/Cross-Build-Compiler-Name-Usage/</id>
     <published>2019-07-15T02:21:37.000Z</published>
     <updated>2023-09-14T05:55:05.343Z</updated>
     
@@ -232,19 +232,19 @@
     
     </summary>
     
-      <category term="开发工具" scheme="https://oakchen.gitee.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="开发工具" scheme="https://www.sfysoft.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Tool Chain" scheme="https://oakchen.gitee.io/tags/Tool-Chain/"/>
+      <category term="Tool Chain" scheme="https://www.sfysoft.com/tags/Tool-Chain/"/>
     
-      <category term="GCC" scheme="https://oakchen.gitee.io/tags/GCC/"/>
+      <category term="GCC" scheme="https://www.sfysoft.com/tags/GCC/"/>
     
   </entry>
   
   <entry>
     <title>apt-get update出现NO_PUBKEY提示的解决方法</title>
-    <link href="https://oakchen.gitee.io/2019/07/11/Apt-No-Public-Key/"/>
-    <id>https://oakchen.gitee.io/2019/07/11/Apt-No-Public-Key/</id>
+    <link href="https://www.sfysoft.com/2019/07/11/Apt-No-Public-Key/"/>
+    <id>https://www.sfysoft.com/2019/07/11/Apt-No-Public-Key/</id>
     <published>2019-07-11T05:43:41.000Z</published>
     <updated>2023-09-14T05:55:05.331Z</updated>
     
@@ -259,19 +259,19 @@
     
     </summary>
     
-      <category term="Linux使用" scheme="https://oakchen.gitee.io/categories/Linux%E4%BD%BF%E7%94%A8/"/>
+      <category term="Linux使用" scheme="https://www.sfysoft.com/categories/Linux%E4%BD%BF%E7%94%A8/"/>
     
     
-      <category term="Debian" scheme="https://oakchen.gitee.io/tags/Debian/"/>
+      <category term="Debian" scheme="https://www.sfysoft.com/tags/Debian/"/>
     
-      <category term="Ubuntu" scheme="https://oakchen.gitee.io/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="https://www.sfysoft.com/tags/Ubuntu/"/>
     
   </entry>
   
   <entry>
     <title>Hexo使用问题与解决方法</title>
-    <link href="https://oakchen.gitee.io/2019/06/26/Hexo-Issues-and-Solution/"/>
-    <id>https://oakchen.gitee.io/2019/06/26/Hexo-Issues-and-Solution/</id>
+    <link href="https://www.sfysoft.com/2019/06/26/Hexo-Issues-and-Solution/"/>
+    <id>https://www.sfysoft.com/2019/06/26/Hexo-Issues-and-Solution/</id>
     <published>2019-06-26T02:09:10.000Z</published>
     <updated>2023-09-14T05:55:05.351Z</updated>
     
@@ -284,17 +284,17 @@
     
     </summary>
     
-      <category term="软件使用" scheme="https://oakchen.gitee.io/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/"/>
+      <category term="软件使用" scheme="https://www.sfysoft.com/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/"/>
     
     
-      <category term="Hexo" scheme="https://oakchen.gitee.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://www.sfysoft.com/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Samba使用问题与解决方法</title>
-    <link href="https://oakchen.gitee.io/2019/06/21/Samba-Issues-and-Solution/"/>
-    <id>https://oakchen.gitee.io/2019/06/21/Samba-Issues-and-Solution/</id>
+    <link href="https://www.sfysoft.com/2019/06/21/Samba-Issues-and-Solution/"/>
+    <id>https://www.sfysoft.com/2019/06/21/Samba-Issues-and-Solution/</id>
     <published>2019-06-21T07:08:12.000Z</published>
     <updated>2023-09-14T05:55:05.355Z</updated>
     
@@ -307,17 +307,17 @@
     
     </summary>
     
-      <category term="服务器" scheme="https://oakchen.gitee.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="服务器" scheme="https://www.sfysoft.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
     
-      <category term="Samba" scheme="https://oakchen.gitee.io/tags/Samba/"/>
+      <category term="Samba" scheme="https://www.sfysoft.com/tags/Samba/"/>
     
   </entry>
   
   <entry>
     <title>家庭网关设备的隐藏账户和密码</title>
-    <link href="https://oakchen.gitee.io/2019/06/20/HomeGateway-Hidden-Username-Password/"/>
-    <id>https://oakchen.gitee.io/2019/06/20/HomeGateway-Hidden-Username-Password/</id>
+    <link href="https://www.sfysoft.com/2019/06/20/HomeGateway-Hidden-Username-Password/"/>
+    <id>https://www.sfysoft.com/2019/06/20/HomeGateway-Hidden-Username-Password/</id>
     <published>2019-06-20T10:41:38.000Z</published>
     <updated>2023-09-14T05:55:05.351Z</updated>
     
@@ -330,17 +330,17 @@
     
     </summary>
     
-      <category term="信息安全" scheme="https://oakchen.gitee.io/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+      <category term="信息安全" scheme="https://www.sfysoft.com/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
     
     
-      <category term="网络设备" scheme="https://oakchen.gitee.io/tags/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87/"/>
+      <category term="网络设备" scheme="https://www.sfysoft.com/tags/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87/"/>
     
   </entry>
   
   <entry>
     <title>APK编译错误之Error inflating class</title>
-    <link href="https://oakchen.gitee.io/2019/05/28/APK-Build-Issue-Error-inflating-class/"/>
-    <id>https://oakchen.gitee.io/2019/05/28/APK-Build-Issue-Error-inflating-class/</id>
+    <link href="https://www.sfysoft.com/2019/05/28/APK-Build-Issue-Error-inflating-class/"/>
+    <id>https://www.sfysoft.com/2019/05/28/APK-Build-Issue-Error-inflating-class/</id>
     <published>2019-05-28T07:04:16.000Z</published>
     <updated>2023-08-02T00:59:54.689Z</updated>
     
@@ -354,19 +354,19 @@
     
     </summary>
     
-      <category term="软件开发" scheme="https://oakchen.gitee.io/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+      <category term="软件开发" scheme="https://www.sfysoft.com/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="Android应用" scheme="https://oakchen.gitee.io/tags/Android%E5%BA%94%E7%94%A8/"/>
+      <category term="Android应用" scheme="https://www.sfysoft.com/tags/Android%E5%BA%94%E7%94%A8/"/>
     
-      <category term="Android Studio" scheme="https://oakchen.gitee.io/tags/Android-Studio/"/>
+      <category term="Android Studio" scheme="https://www.sfysoft.com/tags/Android-Studio/"/>
     
   </entry>
   
   <entry>
     <title>APK编译错误之Duplicate class</title>
-    <link href="https://oakchen.gitee.io/2019/05/24/APK-Build-Issue-Duplicate-class/"/>
-    <id>https://oakchen.gitee.io/2019/05/24/APK-Build-Issue-Duplicate-class/</id>
+    <link href="https://www.sfysoft.com/2019/05/24/APK-Build-Issue-Duplicate-class/"/>
+    <id>https://www.sfysoft.com/2019/05/24/APK-Build-Issue-Duplicate-class/</id>
     <published>2019-05-24T07:07:12.000Z</published>
     <updated>2023-08-02T00:59:54.689Z</updated>
     
@@ -380,19 +380,19 @@
     
     </summary>
     
-      <category term="软件开发" scheme="https://oakchen.gitee.io/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+      <category term="软件开发" scheme="https://www.sfysoft.com/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="Android应用" scheme="https://oakchen.gitee.io/tags/Android%E5%BA%94%E7%94%A8/"/>
+      <category term="Android应用" scheme="https://www.sfysoft.com/tags/Android%E5%BA%94%E7%94%A8/"/>
     
-      <category term="Android Studio" scheme="https://oakchen.gitee.io/tags/Android-Studio/"/>
+      <category term="Android Studio" scheme="https://www.sfysoft.com/tags/Android-Studio/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu远程桌面连接</title>
-    <link href="https://oakchen.gitee.io/2019/04/22/Ubuntu-RemoteDesktop/"/>
-    <id>https://oakchen.gitee.io/2019/04/22/Ubuntu-RemoteDesktop/</id>
+    <link href="https://www.sfysoft.com/2019/04/22/Ubuntu-RemoteDesktop/"/>
+    <id>https://www.sfysoft.com/2019/04/22/Ubuntu-RemoteDesktop/</id>
     <published>2019-04-22T16:00:00.000Z</published>
     <updated>2019-05-19T16:00:00.000Z</updated>
     
@@ -406,17 +406,17 @@
     
     </summary>
     
-      <category term="Linux使用" scheme="https://oakchen.gitee.io/categories/Linux%E4%BD%BF%E7%94%A8/"/>
+      <category term="Linux使用" scheme="https://www.sfysoft.com/categories/Linux%E4%BD%BF%E7%94%A8/"/>
     
     
-      <category term="Ubuntu" scheme="https://oakchen.gitee.io/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="https://www.sfysoft.com/tags/Ubuntu/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu扩展软件包——PPA的使用</title>
-    <link href="https://oakchen.gitee.io/2019/04/21/Ubuntu-UsingPPA/"/>
-    <id>https://oakchen.gitee.io/2019/04/21/Ubuntu-UsingPPA/</id>
+    <link href="https://www.sfysoft.com/2019/04/21/Ubuntu-UsingPPA/"/>
+    <id>https://www.sfysoft.com/2019/04/21/Ubuntu-UsingPPA/</id>
     <published>2019-04-21T16:00:00.000Z</published>
     <updated>2019-05-19T16:00:00.000Z</updated>
     
@@ -431,10 +431,10 @@
     
     </summary>
     
-      <category term="Linux使用" scheme="https://oakchen.gitee.io/categories/Linux%E4%BD%BF%E7%94%A8/"/>
+      <category term="Linux使用" scheme="https://www.sfysoft.com/categories/Linux%E4%BD%BF%E7%94%A8/"/>
     
     
-      <category term="Ubuntu" scheme="https://oakchen.gitee.io/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="https://www.sfysoft.com/tags/Ubuntu/"/>
     
   </entry>
   

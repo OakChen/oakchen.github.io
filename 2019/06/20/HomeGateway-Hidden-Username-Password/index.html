@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>家庭网关设备的隐藏账户和密码 | sfysoft</title>
+  <meta name="description" content="在安装家庭宽带时，运营商会给用户一个网关设备，现在常见的就是光猫。这些设备，会提供给用户一个普通账户和密码，可以进行一些有限的修改，在中国电信的设备上，这个账户是useradmin。然而，总是有些玩家想要更大程度地控制自己的设备，启用更多的功能，于是，出现了各种破解的方法，找出了不同的设备具有的隐藏账户和密码。这里，记录一些常见设备的隐藏账户及其相关的配置页面。 一般来说，隐藏的账户会有两个，一个">
+<meta name="keywords" content="网络设备">
+<meta property="og:type" content="article">
+<meta property="og:title" content="家庭网关设备的隐藏账户和密码">
+<meta property="og:url" content="https://www.sfysoft.com/2019/06/20/HomeGateway-Hidden-Username-Password/index.html">
+<meta property="og:site_name" content="sfysoft">
+<meta property="og:description" content="在安装家庭宽带时，运营商会给用户一个网关设备，现在常见的就是光猫。这些设备，会提供给用户一个普通账户和密码，可以进行一些有限的修改，在中国电信的设备上，这个账户是useradmin。然而，总是有些玩家想要更大程度地控制自己的设备，启用更多的功能，于是，出现了各种破解的方法，找出了不同的设备具有的隐藏账户和密码。这里，记录一些常见设备的隐藏账户及其相关的配置页面。 一般来说，隐藏的账户会有两个，一个">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2023-09-14T05:55:05.351Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="家庭网关设备的隐藏账户和密码">
+<meta name="twitter:description" content="在安装家庭宽带时，运营商会给用户一个网关设备，现在常见的就是光猫。这些设备，会提供给用户一个普通账户和密码，可以进行一些有限的修改，在中国电信的设备上，这个账户是useradmin。然而，总是有些玩家想要更大程度地控制自己的设备，启用更多的功能，于是，出现了各种破解的方法，找出了不同的设备具有的隐藏账户和密码。这里，记录一些常见设备的隐藏账户及其相关的配置页面。 一般来说，隐藏的账户会有两个，一个">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.sfysoft.com/2019/06/20/HomeGateway-Hidden-Username-Password/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="sfysoft" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css">
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/OakChen" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Oak Chen</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Software Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/OakChen" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux使用/">Linux使用</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/">信息安全</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/服务器/">服务器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件使用/">软件使用</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android应用/">Android应用</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian/">Debian</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GCC/">GCC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gradle/">Gradle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenSSL/">OpenSSL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Samba/">Samba</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tool-Chain/">Tool Chain</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码质量/">代码质量</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络设备/">网络设备</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Android-Studio/" style="font-size: 13.5px;">Android Studio</a> <a href="/tags/Android应用/" style="font-size: 13.25px;">Android应用</a> <a href="/tags/Debian/" style="font-size: 13px;">Debian</a> <a href="/tags/GCC/" style="font-size: 13px;">GCC</a> <a href="/tags/Git/" style="font-size: 13px;">Git</a> <a href="/tags/Gradle/" style="font-size: 13px;">Gradle</a> <a href="/tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/OpenSSL/" style="font-size: 13px;">OpenSSL</a> <a href="/tags/Samba/" style="font-size: 13px;">Samba</a> <a href="/tags/Tool-Chain/" style="font-size: 14px;">Tool Chain</a> <a href="/tags/Ubuntu/" style="font-size: 13.75px;">Ubuntu</a> <a href="/tags/代码质量/" style="font-size: 13.25px;">代码质量</a> <a href="/tags/网络设备/" style="font-size: 13px;">网络设备</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发工具/">开发工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/10/ClangFormat-Practices/" class="title">ClangFormat实践</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-10T14:40:55.000Z" itemprop="datePublished">2022-05-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发工具/">开发工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/09/ClangFormat-Reference/" class="title">ClangFormat参考</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-09T14:43:55.000Z" itemprop="datePublished">2022-05-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/信息安全/">信息安全</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/05/31/Sign-with-Ed25519-by-OpenSSL/" class="title">OpenSSL使用Ed25519算法签名</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-05-31T08:45:37.000Z" itemprop="datePublished">2021-05-31</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发工具/">开发工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/05/26/How-to-build-perf/" class="title">如何给嵌入式Linux构建一个支持多特性的perf</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-05-26T10:58:26.000Z" itemprop="datePublished">2021-05-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Linux使用/">Linux使用</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/04/23/Ubuntu-Use-MTP/" class="title">Ubuntu上使用MTP传输文件</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-23T10:41:18.000Z" itemprop="datePublished">2021-04-23</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-HomeGateway-Hidden-Username-Password" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      家庭网关设备的隐藏账户和密码
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/06/20/HomeGateway-Hidden-Username-Password/" class="article-date">
+	  <time datetime="2019-06-20T10:41:38.000Z" itemprop="datePublished">2019-06-20</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/信息安全/">信息安全</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/网络设备/">网络设备</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/06/20/HomeGateway-Hidden-Username-Password/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.4k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>在安装家庭宽带时，运营商会给用户一个网关设备，现在常见的就是光猫。这些设备，会提供给用户一个普通账户和密码，可以进行一些有限的修改，在中国电信的设备上，这个账户是useradmin。然而，总是有些玩家想要更大程度地控制自己的设备，启用更多的功能，于是，出现了各种破解的方法，找出了不同的设备具有的隐藏账户和密码。这里，记录一些常见设备的隐藏账户及其相关的配置页面。</p>
+<p>一般来说，隐藏的账户会有两个，一个是运营商管理账户，可以修改大多数路由配置功能，在中国电信的设备上，这个账户是telecomadmin；一个是工厂账户，它可以修改设备管理的底层功能，这个账户根据设备生产商有所不同。以下列出收集到的设备信息。</p>
+<h2 id="账户与配置页"><a class="markdownIt-Anchor" href="#账户与配置页"></a> 账户与配置页</h2>
+<h3 id="烽火hg220gs"><a class="markdownIt-Anchor" href="#烽火hg220gs"></a> 烽火HG220GS</h3>
+<p>硬件版本为BCM.V2.0且软件版本为E00D1.00M5002的设备已验证有效。</p>
+<p>启用隐藏账户页面：<code>http://192.168.1.1/logoffaccount.html</code>。如果打开这个页面需要登录，用普通账户登录即可，然后可以在这个页面里启用工厂账户。没有在此启用的话，即使知道了工厂账户的密码，也是无法登录的。</p>
+<p>这个型号的设备，中国电信版本的工厂账户是<code>fiberhomehg2x0</code>，密码是<code>hg2x0</code>。telnet账号是<code>admin</code>，密码是<code>admin</code>。超级用户的密码，需要使用工厂账户登录<code>http://192.168.1.1</code>后，在地址栏里输入<code>http://192.168.1.1/backupsettings.conf</code>下载<code>backupsettings.conf</code>，然后查找<code>Password</code>关键词，在<code>TeleComAccount</code>下面这一行的内容，即是<code>telecomadmin</code>账户经Base64编码后的密码，使用Base64解码工具即可获得原文密码。</p>
+<h3 id="hg226g未经验证"><a class="markdownIt-Anchor" href="#hg226g未经验证"></a> HG226G（未经验证）</h3>
+<p>额外登录页面：<code>http://192.168.1.1/brcm/login.html</code>。一般而言，网关的登录页面是<code>http://192.168.1.1</code>，但有的设备可以通过这个地址登录。</p>
+<p>备份配置页面：<code>http://192.168.1.1/brcm/backupsettings.html</code>。此页面提供配置下载功能，从这里下载的配置文件可以找到<code>telecomadmin</code>的密码，密码可能是明文的，也可能是Base64编码后的。</p>
+<p>更新配置页面：<code>http://192.168.1.1/brcm/updatesettings.html</code>。这个页面可以上传修改后的配置文件，并更新到设备。</p>
+<p>上述几个在/brcm下的页面，登录账户是<code>admin</code>，密码是<code>admin</code>。</p>
+<p>这个型号的设备，工厂账户是<code>fiberhomehg2x0</code>，密码是<code>hg2x0</code>。</p>
+<h3 id="吉比特cm113-z未经验证"><a class="markdownIt-Anchor" href="#吉比特cm113-z未经验证"></a> 吉比特CM113-Z（未经验证）</h3>
+<p>启用隐藏账户页面：<code>http://192.168.1.1/logoffaccount.html</code>（2021-02-02：根据网友(hashwu333)[<a href="https://github.com/hashwu333" target="_blank" rel="noopener">https://github.com/hashwu333</a>]提供的信息：登录地址应该是：<code>http://192.168.1.1</code>）。如果打开这个页面需要登录，用普通账户登录即可，然后可以在这个页面里启用工厂账户。</p>
+<p>这个型号的设备，中国移动版本的超级账户是<code>CMCCAdmin</code>，密码是<code>aDm8H%MdA</code>。工厂账户是<code>fiberhomehg2x0</code>，密码是<code>hg2x0</code>。</p>
+<h3 id="烽火hg6821m光猫未经验证"><a class="markdownIt-Anchor" href="#烽火hg6821m光猫未经验证"></a> 烽火HG6821M光猫（未经验证）</h3>
+<p>启用隐藏账户页面：<code>http://192.168.1.1/logoffaccount.html</code>。如果打开这个页面需要登录，用普通账户登录即可，然后可以在这个页面里启用工厂账户。</p>
+<p>文件配置信息地址：<code>http://192.168.1.1/cgi-bin/baseinfoSet.cgi</code>。</p>
+<p>临时开启telnet服务页面：<code>http://192.168.1.1/cgi-bin/telnetenable.cgi?telnetenable=1</code>。</p>
+<p>这个型号的设备，中国移动版本的超级账户是<code>CMCCAdmin</code>，密码是<code>aDm8H%MdA</code>。工厂账户是<code>fiberhomehg2x0</code>，密码是<code>hg2x0</code>。telnet账号是<code>root</code>，密码是<code>hg2x0</code>或<code>abcd</code>。</p>
+<p>使用工厂账户登录后，可在维护页面，一键下载配置目录下所有文件。解压后打开<code>param.xml</code>可以查询运营商管理账户密码。<code>factory.conf</code>文件里则保存了光猫的所有配置信息。</p>
+<p>也可以在使用telnet登录设备后，查看<code>/flash/cfg/agentconf/factory.conf</code>文件获得超级用户密码。</p>
+<h2 id="如何取得这些信息"><a class="markdownIt-Anchor" href="#如何取得这些信息"></a> 如何取得这些信息</h2>
+<ol>
+<li>查看厂商的说明书</li>
+<li>从网络上搜索对应设备型号</li>
+<li>从业内人士处了解到</li>
+<li>使用普通账户登录后，分析网页的源代码和脚本，例如，从HG220GS设备上登录后，查看源码可以发现如下内容：</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;script language=<span class="string">'javascript'</span>&gt;</span><br><span class="line">	&lt;!-- hide</span><br><span class="line">	<span class="keyword">var</span> options = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">''</span>,</span><br><span class="line">		<span class="string">'admin'</span>,</span><br><span class="line">		<span class="string">'1'</span>,</span><br><span class="line">		<span class="string">'2'</span>,</span><br><span class="line">		<span class="string">'1'</span>,</span><br><span class="line">		<span class="string">''</span>,</span><br><span class="line">		<span class="string">'CT_E8_C'</span>,</span><br><span class="line">		<span class="string">'1'</span>,</span><br><span class="line">		<span class="string">''</span>,  <span class="comment">//SUPPORT_SES</span></span><br><span class="line">		<span class="string">'0'</span>,</span><br><span class="line">		<span class="string">'useradmin'</span>,</span><br><span class="line">		<span class="string">'telecomadmin'</span>,</span><br><span class="line">		<span class="string">'useradmin'</span>,</span><br><span class="line">		<span class="string">'fiberhomehg2x0'</span>,</span><br><span class="line">		<span class="string">'ctinfo.html'</span>,</span><br><span class="line">		<span class="string">'HG220G'</span>,</span><br><span class="line">		<span class="string">'1'</span>,</span><br><span class="line">		<span class="string">'1'</span>,</span><br><span class="line">		<span class="string">'0'</span>,</span><br><span class="line">		<span class="string">'3'</span>,</span><br><span class="line">		<span class="string">'5'</span></span><br><span class="line">		);</span><br><span class="line">	createCTMenu(options);</span><br><span class="line">	initializeDocument();</span><br><span class="line">	<span class="comment">// done hiding --&gt;</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>进一步从脚本menuCT.js找到createCTMenu函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createCTMenu</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line"><span class="comment">//	var curuser = options[MENU_OPTION_CURUSER];</span></span><br><span class="line"><span class="comment">//	var sysuser = options[MENU_OPTION_SYSUSER];</span></span><br><span class="line">	<span class="keyword">var</span> inUseName = options[MENU_OPTION_INUSENAME];</span><br><span class="line">	<span class="keyword">var</span> firstPage = options[MENU_OPTION_FIRSTPAGE];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(options[MENU_OPTION_FACTORYNAME] == inUseName)&#123;</span><br><span class="line">		foldersTree = gFld(<span class="string">''</span>, <span class="string">'factorymode.html'</span>, <span class="literal">true</span>);</span><br><span class="line">		nodeFactory = insFld(foldersTree, gFld(getMenuTitle(MENU_FACTORY), <span class="string">'factorymode.html'</span>, <span class="literal">true</span>));</span><br><span class="line">		insFld(nodeFactory, gFld(getMenuTitle(MENU_FACTORY_BASEINFO), <span class="string">'factorymode.html'</span>, <span class="literal">true</span>));</span><br><span class="line"></span><br><span class="line">		menufiberhome(options);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		foldersTree = gFld(<span class="string">''</span>, <span class="string">'ctinfo.html'</span>);</span><br><span class="line">		<span class="comment">// device info menu</span></span><br><span class="line">		nodeStatus = insFld(foldersTree, gFld(getMenuTitle(MENU_STATUS), <span class="string">'ctinfo.html'</span>));</span><br><span class="line">		<span class="comment">// device summary menu</span></span><br><span class="line">		nodeStatusDevice = insFld(nodeStatus, gFld(getMenuTitle(MENU_STS_DEVICE), <span class="string">'ctinfo.html'</span>));</span><br><span class="line">		insFld(nodeStatusDevice, gFld(getMenuTitle(MENU_STS_DEV_INFO), <span class="string">'ctinfo.html'</span>));</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(options[MENU_OPTION_ADMINNAME] == inUseName)</span><br><span class="line">			menuAdmin(options);</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(options[MENU_OPTION_USERNAME] == inUseName)</span><br><span class="line">			menuUser(options);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">​</span><br><span class="line"><span class="comment">/*	if ( curuser == sysuser || curuser == 'admin')</span></span><br><span class="line"><span class="comment">​		menuAdmin(options);</span></span><br><span class="line"><span class="comment">​	else</span></span><br><span class="line"><span class="comment">​		menuUser(options);</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>进而分析整个menuCT.js文件，就可以知道<code>options</code>数组中出现的<code>useradmin</code>、<code>telecomadmin</code>、<code>useradmin</code>、<code>fiberhomehg2x0</code>分别对应的是<code>INUSENAME</code>、<code>ADMINNAME</code>、<code>USERNAME</code>、<code>FACTORYNAME</code>。</p>
+<ol start="5">
+<li>拆开硬件后，自行在主板上接上串口线（一般是TTL四线连接），然后要么按CTRL+C，要么搜索相应型号的telnet用户和密码登录Shell，探索文件系统的内容来分析。</li>
+</ol>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://www.sfysoft.com/2019/06/20/HomeGateway-Hidden-Username-Password/" title="家庭网关设备的隐藏账户和密码" target="_blank" rel="external">https://www.sfysoft.com/2019/06/20/HomeGateway-Hidden-Username-Password/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/OakChen" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/OakChen" target="_blank"><span class="text-dark">Oak Chen</span><small class="ml-1x">Software Developer</small></a></h3>
+        <div>试验、记录、总结</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+           
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2019/06/21/Samba-Issues-and-Solution/" title="Samba使用问题与解决方法"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2019/05/28/APK-Build-Issue-Error-inflating-class/" title="APK编译错误之Error inflating class"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,qzone,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone,wechat,facebook,twitter"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/OakChen" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2023 Oak Chen
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css"> -->
+  <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+  <script src="https://unpkg.com/blueimp-md5@latest/js/md5.min.js"></script>
+  <script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'ab306904ff32116aa7fd',
+    clientSecret: '0ab19b144178905a1c97510bbbc499b63b3e7ff0',
+    repo: 'oakchen.github.io',
+    owner: 'OakChen',
+    admin: ['OakChen'],
+    id: location.pathname,
+    distractionFreeMode: true
+  })
+  gitalk.render('comments')
+  </script>
+
+      
+
+
+
+
+
+
+
+</body>
+</html>

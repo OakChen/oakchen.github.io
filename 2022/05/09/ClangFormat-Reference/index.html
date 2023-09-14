@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>ClangFormat参考 | sfysoft</title>
+  <meta name="description" content="概述 ClangFormat是一组基于LibFormat的工具，它根据风格选项（Style Options）来格式化C系语言源代码，如C/C++/Java/JavaScript/Objective-C/C#语言的源代码，也可以格式化JSON/Protobuf这样描述数据的代码。ClangFormat可以以独立的或编辑器集成的方式工作。独立的程序名为clang-format。  工具下载与安装 对">
+<meta name="keywords" content="Tool Chain,代码质量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ClangFormat参考">
+<meta property="og:url" content="https://www.sfysoft.com/2022/05/09/ClangFormat-Reference/index.html">
+<meta property="og:site_name" content="sfysoft">
+<meta property="og:description" content="概述 ClangFormat是一组基于LibFormat的工具，它根据风格选项（Style Options）来格式化C系语言源代码，如C/C++/Java/JavaScript/Objective-C/C#语言的源代码，也可以格式化JSON/Protobuf这样描述数据的代码。ClangFormat可以以独立的或编辑器集成的方式工作。独立的程序名为clang-format。  工具下载与安装 对">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2023-09-14T05:55:05.343Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ClangFormat参考">
+<meta name="twitter:description" content="概述 ClangFormat是一组基于LibFormat的工具，它根据风格选项（Style Options）来格式化C系语言源代码，如C/C++/Java/JavaScript/Objective-C/C#语言的源代码，也可以格式化JSON/Protobuf这样描述数据的代码。ClangFormat可以以独立的或编辑器集成的方式工作。独立的程序名为clang-format。  工具下载与安装 对">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.sfysoft.com/2022/05/09/ClangFormat-Reference/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="sfysoft" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css">
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/OakChen" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Oak Chen</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Software Developer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shanghai, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/OakChen" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux使用/">Linux使用</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/">信息安全</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具/">开发工具</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/服务器/">服务器</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件使用/">软件使用</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio/">Android Studio</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android应用/">Android应用</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian/">Debian</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GCC/">GCC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gradle/">Gradle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenSSL/">OpenSSL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Samba/">Samba</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tool-Chain/">Tool Chain</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码质量/">代码质量</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络设备/">网络设备</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Android-Studio/" style="font-size: 13.5px;">Android Studio</a> <a href="/tags/Android应用/" style="font-size: 13.25px;">Android应用</a> <a href="/tags/Debian/" style="font-size: 13px;">Debian</a> <a href="/tags/GCC/" style="font-size: 13px;">GCC</a> <a href="/tags/Git/" style="font-size: 13px;">Git</a> <a href="/tags/Gradle/" style="font-size: 13px;">Gradle</a> <a href="/tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/OpenSSL/" style="font-size: 13px;">OpenSSL</a> <a href="/tags/Samba/" style="font-size: 13px;">Samba</a> <a href="/tags/Tool-Chain/" style="font-size: 14px;">Tool Chain</a> <a href="/tags/Ubuntu/" style="font-size: 13.75px;">Ubuntu</a> <a href="/tags/代码质量/" style="font-size: 13.25px;">代码质量</a> <a href="/tags/网络设备/" style="font-size: 13px;">网络设备</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发工具/">开发工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/10/ClangFormat-Practices/" class="title">ClangFormat实践</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-10T14:40:55.000Z" itemprop="datePublished">2022-05-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发工具/">开发工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/09/ClangFormat-Reference/" class="title">ClangFormat参考</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-09T14:43:55.000Z" itemprop="datePublished">2022-05-09</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/信息安全/">信息安全</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/05/31/Sign-with-Ed25519-by-OpenSSL/" class="title">OpenSSL使用Ed25519算法签名</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-05-31T08:45:37.000Z" itemprop="datePublished">2021-05-31</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发工具/">开发工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/05/26/How-to-build-perf/" class="title">如何给嵌入式Linux构建一个支持多特性的perf</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-05-26T10:58:26.000Z" itemprop="datePublished">2021-05-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Linux使用/">Linux使用</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/04/23/Ubuntu-Use-MTP/" class="title">Ubuntu上使用MTP传输文件</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-23T10:41:18.000Z" itemprop="datePublished">2021-04-23</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-ClangFormat-Reference" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ClangFormat参考
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/05/09/ClangFormat-Reference/" class="article-date">
+	  <time datetime="2022-05-09T14:43:55.000Z" itemprop="datePublished">2022-05-09</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/开发工具/">开发工具</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/Tool-Chain/">Tool Chain</a>, <a class="article-tag-link" href="/tags/代码质量/">代码质量</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/09/ClangFormat-Reference/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 3k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 12(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h2>
+<p>ClangFormat是一组基于LibFormat的工具，它根据风格选项（Style Options）来格式化C系语言源代码，如C/C++/Java/JavaScript/Objective-C/C#语言的源代码，也可以格式化JSON/Protobuf这样描述数据的代码。ClangFormat可以以独立的或编辑器集成的方式工作。独立的程序名为clang-format。</p>
+<h2 id="工具下载与安装"><a class="markdownIt-Anchor" href="#工具下载与安装"></a> 工具下载与安装</h2>
+<p>对于Debian类的系统，直接使用<code>apt install clang-format</code>即可安装clang-format，但这样安装的版本可能较旧，而clang-format仍在不断地更新中，新的版本可能增加了更多的格式化特性，推荐到<a href="https://github.com/llvm/llvm-project/releases" target="_blank" rel="noopener">LLVM Github Release</a>页面下载最新的clang+llvm包。例如，对于LLVM 14.0.0版本，PC Linux可以下载<a href="https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.0/clang+llvm-14.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz" target="_blank" rel="noopener">clang+llvm-14.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz</a>，64位Windows下载<a href="https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.0/LLVM-14.0.0-win64.exe" target="_blank" rel="noopener">LLVM-14.0.0-win64.exe</a>。</p>
+<p>一般来讲，Linux系统里自带的clang-format包，其安装目录是在/usr下，我们下载的包可以解压到/usr/local下，即压缩包里面的bin、include、lib、libexec、share等目录是放在/usr/local下面的，在PATH环境变量的设置中，默认/usr/local/bin在/usr/bin之前，如此操作，不破坏系统自带的clang-format包，但会使用用户自己安装的clang-format。</p>
+<p>下面的说明假设INSTALL_DIR代表了/usr/local，clang-format程序在/usr/local/bin下面。</p>
+<h2 id="独立工具clang-format"><a class="markdownIt-Anchor" href="#独立工具clang-format"></a> 独立工具clang-format</h2>
+<p>clang-format的基本用法是：<code>clang-format [选项] [文件列表]</code>，clang-format将对文件列表中列出的文件进行格式化，若没有提供文件列表，则从标准输入读入内容进行格式化。若提供了文件列表及-i选项，则clang-format格式的结果直接写入文件，否则，结果写到标准输出。使用<code>clang-format --help</code>可以查看支持的选项。</p>
+<h3 id="clang-format选项说明"><a class="markdownIt-Anchor" href="#clang-format选项说明"></a> clang-format选项说明</h3>
+<p>以下选项以clang-format 14.0.0为基准。</p>
+<ul>
+<li>格式化选项</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">--Wclang-format-violations     - 警告需要更改个别格式，仅与--dry-run或-n同时使用</span><br><span class="line">--Werror                       - 将格式化时的警告视为错误</span><br><span class="line">--Wno-clang-format-violations  - 不警告需要更改个别格式，仅与--dry-run或-n同时使用</span><br><span class="line">--Wno-error=&lt;value&gt;            - 对value指定的警告类型不视为错误，当前value仅支持设置为unknown</span><br><span class="line">  =unknown                     -   对于未知的格式化选项，仅仅警告并继续格式化。不同版本的clang-format，支持的格式化选项可能不同，</span><br><span class="line">                                   因此这选项在实际使用时非常有用，否则，在使用低版本的clang-format处理较高版本才支持的选项时，</span><br><span class="line">                                   可能持续产生错误而不进行格式化。但是它也可能因为某些选项不支持而产生一些很奇怪的结果。</span><br><span class="line">--assume-filename=&lt;string&gt;     - 覆盖用于探测语言的文件名，典型地，当从标准输入读入时，clang-format可以用这个文件名来确定是何种编程语言</span><br><span class="line">--cursor=&lt;uint&gt;                - 光标位置，主要用于编辑器集成时调用clang-format</span><br><span class="line">--dry-run                      - 不产生实际的格式化修改，仅打印警告或错误信息</span><br><span class="line">--dump-config                  - 提取配置选项到标准输出并退出，通常与-style选项合用</span><br><span class="line">--fcolor-diagnostics           - 若设置，在支持颜色控制的终端上，以不同颜色打印诊断信息</span><br><span class="line">--fallback-style=&lt;string&gt;      - 指定一个预定义的编码风格名，当clang-format以-style=file选项调用，但却找不到.clang-format文件时，回退到使用此编码风格</span><br><span class="line">                                 若使用-fallback-style=none，则跳过格式化</span><br><span class="line">--ferror-limit=&lt;uint&gt;          - 设置在停止前可报告的最大错误数，仅和--dry-run或-n一起使用，0意味着无限制</span><br><span class="line">--files=&lt;string&gt;               - 提供一组文件列表以运行clang-format。string指示了一个文件名，其内容是一组要被格式化的文件的路径，一行指定一个文件路径</span><br><span class="line">--fno-color-diagnostics        - 若设置，在支持颜色控制的终端上，不以不同颜色打印诊断信息</span><br><span class="line">-i                             - 直接编辑要格式化的文件</span><br><span class="line">--length=&lt;uint&gt;                - 格式化length指定长度的范围，length的单位为字节。</span><br><span class="line">                                 通过指定多对--offset和--length选项，可以格式化多个范围。</span><br><span class="line">                                 若仅指定了一个--offset而无--length选项，clang-format将格式化到文件结尾。</span><br><span class="line">                                 此选项仅可用于只有一个输入文件时。</span><br><span class="line">--lines=&lt;string&gt;               - &lt;起始行&gt;:&lt;结束行&gt; - 格式化指定范围的行，行号从1开始。</span><br><span class="line">                                 可以使用多个--lines参数来指定多组范围。</span><br><span class="line">                                 此选项不与--offset和--length同时使用。</span><br><span class="line">                                 此选项仅可用于只有一个输入文件时。</span><br><span class="line">-n                             - --dry-run的别名。</span><br><span class="line">--offset=&lt;uint&gt;                - 格式化范围从offset指定的字节处起。</span><br><span class="line">                                 通过指定多对--offset和--length选项，可以格式化多个范围。</span><br><span class="line">                                 此选项仅可用于只有一个输入文件时。</span><br><span class="line">--output-replacements-xml      - 输出替换操作为XML</span><br><span class="line">--qualifier-alignment=&lt;string&gt; - 若设置，覆盖由QualifierAlignment选项指定的限定符（const、inline、static、constexpr、volatile、restrict、<span class="built_in">type</span>）对齐风格。</span><br><span class="line">                                 更多内容参考[Clang-Format Style Options](https://clang.llvm.org/docs/ClangFormatStyleOptions.html)。</span><br><span class="line">--sort-includes                - 若设置，覆盖由SortIncludes选项指定的include排序风格。</span><br><span class="line">                                 更多内容参考[Clang-Format Style Options](https://clang.llvm.org/docs/ClangFormatStyleOptions.html)。</span><br><span class="line">--style=&lt;string&gt;               - 编码风格，当前支持的值包括:</span><br><span class="line">                                   LLVM，GNU，Google，Chromium，Microsoft，Mozilla，WebKit。</span><br><span class="line">                                 使用--style=file则从源文件所在目录起，逐级往父级目录查找并加载.clang-format文件中定义的编码风格配置；</span><br><span class="line">                                   若要格式化的内容来自标准输入，则从当前目录加载.clang-format文件。</span><br><span class="line">                                 使用--style=file:&lt;path/to/styleFile&gt;来显式指定所使用的编码风格文件，此时用的是&lt;path/to/styleFile&gt;而非.clang-format来指定编码风格。</span><br><span class="line">                                   &lt;path/to/styleFile&gt;可以是绝对路径，也可以是相对于工作目录的</span><br><span class="line">                                 使用--style=<span class="string">"&#123;key: value, ...&#125;"</span>来指定特定的编码风格，这样指定的编码风格会应用到所有的输入文件，例如：</span><br><span class="line">                                   --style=<span class="string">"&#123;BasedOnStyle: llvm, IndentWidth: 8&#125;"</span></span><br><span class="line">                                 从.clang-format加载编码风格是默认行为。</span><br><span class="line">--verbose                      - 若设置，在每个格式化输出前显示所处理文件的路径</span><br></pre></td></tr></table></figure>
+<ul>
+<li>通用选项</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">--<span class="built_in">help</span>                         - 显示有效的选项（--<span class="built_in">help</span>-hidden可以查看更多）</span><br><span class="line">--<span class="built_in">help</span>-hidden                  - 显示所有有效的选项</span><br><span class="line">--<span class="built_in">help</span>-list                    - 显示有效选项的列表（--<span class="built_in">help</span>-list-hidden可以查看更多）</span><br><span class="line">--<span class="built_in">help</span>-list-hidden             - 显示所有有效选项的列表</span><br><span class="line">--<span class="built_in">print</span>-all-options            - 在解析完命令行后，显示所有选项的值。可能没什么用</span><br><span class="line">--<span class="built_in">print</span>-options                - 在解析完命令行后，显示所有非默认选项。可能没什么用</span><br><span class="line">--version                      - 显示程序的版本</span><br></pre></td></tr></table></figure>
+<h2 id="配置编码风格"><a class="markdownIt-Anchor" href="#配置编码风格"></a> 配置编码风格</h2>
+<p>.clang-format文件使用YAML格式来配置各种编码风格：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">key1: value1</span><br><span class="line">key2: value2</span><br><span class="line"># A comment.</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>配置文件由多个节组成，并可以用不同的Language:参数来说明，这一节的配置应用于何种语言。第一节没有语言设置，它设置用于所有语言的默认编码风格。特定语言节里的配置将覆盖默认节的同名设置。</p>
+<p>当clang-format格式化一个文件时，会使用文件名来自动探测语言，当格式化标准输入，或者文件并没有一个扩展名时，<code>--assume-filename=</code>选项可以覆盖clang-format用来探测语言的文件名。</p>
+<p>以下是一个支持多语言的配置示例：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment"># 默认使用LLVM的编码风格，但是使用4列的缩进宽度</span></span><br><span class="line"><span class="attr">BasedOnStyle:</span> <span class="string">LLVM</span></span><br><span class="line"><span class="attr">IndentWidth:</span> <span class="number">4</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">Language:</span> <span class="string">Cpp</span></span><br><span class="line"><span class="comment"># Force pointers to the type for C++.</span></span><br><span class="line"><span class="attr">DerivePointerAlignment:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">PointerAlignment:</span> <span class="string">Left</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">Language:</span> <span class="string">JavaScript</span></span><br><span class="line"><span class="comment"># Use 100 columns for JS.</span></span><br><span class="line"><span class="attr">ColumnLimit:</span> <span class="number">100</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">Language:</span> <span class="string">Proto</span></span><br><span class="line"><span class="comment"># Don't format .proto files.</span></span><br><span class="line"><span class="attr">DisableFormat:</span> <span class="literal">true</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">Language:</span> <span class="string">CSharp</span></span><br><span class="line"><span class="comment"># Use 100 columns for C#.</span></span><br><span class="line"><span class="attr">ColumnLimit:</span> <span class="number">100</span></span><br><span class="line"><span class="string">...</span></span><br></pre></td></tr></table></figure>
+<p>当我们要开始编写一个自己的配置时，最简单的方式就是从预定义的编码风格里生成一个包含所有配置项的.clang-format文件，然后再根据需要编辑它。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clang-format --style=LLVM --dump-config &gt; .clang-format</span><br></pre></td></tr></table></figure>
+<p>最新版本支持的完整编码风格可以参考<a href="https://clang.llvm.org/docs/ClangFormatStyleOptions.html" target="_blank" rel="noopener">Clang-Format Style Options</a>。</p>
+<h2 id="对局部代码禁止格式化"><a class="markdownIt-Anchor" href="#对局部代码禁止格式化"></a> 对局部代码禁止格式化</h2>
+<p>工具并不是万能，当有些时候，我们已经手工整理好一些内容，而不希望clang-format去改变它时，可以将它放在注释<code>// clang-format off</code>和<code>// clang-format on</code>之间，或者<code>/* clang-format off */</code>和<code>/* clang-format on */</code>之间。例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> formatted_code;</span><br><span class="line"><span class="comment">// clang-format off</span></span><br><span class="line">    <span class="keyword">void</span>    unformatted_code  ;</span><br><span class="line"><span class="comment">// clang-format on</span></span><br><span class="line"><span class="keyword">void</span> formatted_code_again;</span><br></pre></td></tr></table></figure>
+<h2 id="编辑器集成"><a class="markdownIt-Anchor" href="#编辑器集成"></a> 编辑器集成</h2>
+<h3 id="vim集成"><a class="markdownIt-Anchor" href="#vim集成"></a> vim集成</h3>
+<p>vim可配置为调用clang-format来格式化当前缓冲区，也可以仅格式化选定区域，要使用此功能，添加如下内容到.vimrc来调用<code>&lt;INSTALL_DIR&gt;/share/clang/clang-format.py</code>脚本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> has(<span class="string">'python'</span>)</span><br><span class="line">  map &lt;C-I&gt; :pyf /usr/<span class="built_in">local</span>/share/clang/clang-format.py&lt;cr&gt;</span><br><span class="line">  imap &lt;C-I&gt; &lt;c-o&gt;:pyf /usr/<span class="built_in">local</span>/share/clang/clang-format.py&lt;cr&gt;</span><br><span class="line">elseif has(<span class="string">'python3'</span>)</span><br><span class="line">  map &lt;C-I&gt; :py3f /usr/<span class="built_in">local</span>/share/clang/clang-format.py&lt;cr&gt;</span><br><span class="line">  imap &lt;C-I&gt; &lt;c-o&gt;:py3f /usr/<span class="built_in">local</span>/share/clang/clang-format.py&lt;cr&gt;</span><br><span class="line">endif</span><br></pre></td></tr></table></figure>
+<p>map行配置了NORMAL和VISUAL模式，imap行配置了INSERT模式，C-I表示Ctrl+i，如此，<a href="http://xn--Ctrl+iclang-format-7v22ai7bg9cvwdjt4js7czv7ahymzgcu4lt15acy9mbppcifwe.py" target="_blank" rel="noopener">我们就绑定了Ctrl+i作为快捷键来执行clang-format.py</a>。在NORMAL和INSERT模式时，按下Ctrl+i会格式化当前行，而在VISUAL模式时，按下Ctrl+i会格式化选定区域。被格式化的行或选定区域可能会扩展到一个更大的词法分析范围。</p>
+<p>格式化操作对当前缓冲区有效，它并不创建也不保存任何文件，如果要撤消格式化，使用u命令撤消即可。</p>
+<p>上述配置，要求vim带有python的支持。可以通过<code>vim --verison</code>命令来查看，你所用的vim版本包含了哪些特性，如果输出中，python3前面有+号，表明支持Python 3，py3f命令是有效的，如果python前面有+号，则支持Python 2，pyf命令是有效的，若均不支持，则上述配置无效。</p>
+<p>还有一个选择是保存文件时，格式化修改过的部分，只要把如下内容加到.vimrc里面就可以在保存扩展名为.h、.c、.cc、.cpp的文件时自动格式化修改过的行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>! FormatOnSave()</span><br><span class="line">  <span class="built_in">let</span> l:formatdiff = 1</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> has(<span class="string">'python'</span>)</span><br><span class="line">    pyf /usr/<span class="built_in">local</span>/share/clang/clang-format.py</span><br><span class="line">  elseif has(<span class="string">'python3'</span>)</span><br><span class="line">    py3f /usr/<span class="built_in">local</span>/share/clang/clang-format.py</span><br><span class="line">  endif</span><br><span class="line">endfunction</span><br><span class="line">autocmd BufWritePre *.h,*.c,*.cc,*.cpp call FormatOnSave()</span><br></pre></td></tr></table></figure>
+<h3 id="clion集成"><a class="markdownIt-Anchor" href="#clion集成"></a> CLion集成</h3>
+<p>clang-format已经作为一个可选的代码格式化器集成进CLion。若在打开的项目根目录下存在.clang-format文件，CLion会自动使用.clang-format文件中定义的代码样式，包括缩进、自动完成、代码生成、重构。此时，打开CLion-&gt;设置-&gt;编辑器-&gt;代码样式时，会提示“设置可能被 ClangFormat 重写”。若不需要使用clang-format，可在此提示旁边点击“禁用”。</p>
+<h3 id="visual-studio集成"><a class="markdownIt-Anchor" href="#visual-studio集成"></a> Visual Studio集成</h3>
+<p>Visual Studio自2017 15.7 Preview 1版本起，已经内置了clang-format的支持，若是早期的版本，可从<a href="https://llvm.org/builds/" target="_blank" rel="noopener">LLVM Snapshot Builds</a>下载相应的扩展。默认绑定的快捷键是Ctrl+R，Ctrl+F。</p>
+<h3 id="visual-studio-code集成"><a class="markdownIt-Anchor" href="#visual-studio-code集成"></a> Visual Studio Code集成</h3>
+<p>可从<a href="https://marketplace.visualstudio.com/items?itemName=xaver.clang-format" target="_blank" rel="noopener">Visual Studio Marketplace</a>下载最新的扩展。默认绑定的快捷键是Alt+Shift+F。</p>
+<h3 id="其它编辑器集成"><a class="markdownIt-Anchor" href="#其它编辑器集成"></a> 其它编辑器集成</h3>
+<p>ClangFormat还提供Emacs、BBEdit、Sublime等编辑器的插件，具体可以参考&lt;INSTALL_DIR&gt;/share/clang/目录下的文件。</p>
+<h2 id="应用于patch的格式化脚本"><a class="markdownIt-Anchor" href="#应用于patch的格式化脚本"></a> 应用于patch的格式化脚本</h2>
+<p><code>INSTALL_DIR/share/clang/clang-format-diff.py</code>解析合并差异（unified diff）的输出，并使用clang-format格式化所有包含的行。</p>
+<p>所以，格式化最新一个git提交的所有行，如下操作即可：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff -U0 --no-color HEAD^ | clang-format-diff.py -i -p1</span><br></pre></td></tr></table></figure>
+<p>对于Mercurial/hg，则为如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hg diff -U0 --color=never | clang-format-diff.py -i -p1</span><br></pre></td></tr></table></figure>
+<p>对于SVN，则为如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn diff --diff-cmd=diff -x -U0 | clang-format-diff.py -i</span><br></pre></td></tr></table></figure>
+<p>选项-U0是用来创建无上下文行的差异，否则脚本会把上下文行也格式化了。<br>
+这些命令使用了差异输出中的文件路径，所以，仅能在仓库的根目录下工作。</p>
+<h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2>
+<ul>
+<li><a href="https://clang.llvm.org/docs/ClangFormat.html" target="_blank" rel="noopener">ClangFormat</a></li>
+<li><a href="https://llvm.org/builds/" target="_blank" rel="noopener">LLVM Snapshot Builds</a></li>
+<li><a href="https://clang.llvm.org/docs/ClangFormatStyleOptions.html" target="_blank" rel="noopener">Clang-Format Style Options</a></li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://www.sfysoft.com/2022/05/09/ClangFormat-Reference/" title="ClangFormat参考" target="_blank" rel="external">https://www.sfysoft.com/2022/05/09/ClangFormat-Reference/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/OakChen" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/OakChen" target="_blank"><span class="text-dark">Oak Chen</span><small class="ml-1x">Software Developer</small></a></h3>
+        <div>试验、记录、总结</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+           
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/05/10/ClangFormat-Practices/" title="ClangFormat实践"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2021/05/31/Sign-with-Ed25519-by-OpenSSL/" title="OpenSSL使用Ed25519算法签名"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,qzone,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone,wechat,facebook,twitter"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/OakChen" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2023 Oak Chen
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css"> -->
+  <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+  <script src="https://unpkg.com/blueimp-md5@latest/js/md5.min.js"></script>
+  <script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'ab306904ff32116aa7fd',
+    clientSecret: '0ab19b144178905a1c97510bbbc499b63b3e7ff0',
+    repo: 'oakchen.github.io',
+    owner: 'OakChen',
+    admin: ['OakChen'],
+    id: location.pathname,
+    distractionFreeMode: true
+  })
+  gitalk.render('comments')
+  </script>
+
+      
+
+
+
+
+
+
+
+</body>
+</html>
