@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>sfysoft</title>
+  
+  <subtitle>Oak Chen的个人博客</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://oakchen.gitee.io/"/>
+  <updated>2023-09-14T05:55:05.339Z</updated>
+  <id>https://oakchen.gitee.io/</id>
+  
+  <author>
+    <name>Oak Chen</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ClangFormat实践</title>
+    <link href="https://oakchen.gitee.io/2022/05/10/ClangFormat-Practices/"/>
+    <id>https://oakchen.gitee.io/2022/05/10/ClangFormat-Practices/</id>
+    <published>2022-05-10T14:40:55.000Z</published>
+    <updated>2023-09-14T05:55:05.339Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;clang-format的使用&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#clang-format的使用&quot;&gt;&lt;/a&gt; clang-format的使用&lt;/h2&gt;
+&lt;h3 id=&quot;使用预定义的编码风格&quot;&gt;&lt;a class=&quot;markdo
+      
+    
+    </summary>
+    
+      <category term="开发工具" scheme="https://oakchen.gitee.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Tool Chain" scheme="https://oakchen.gitee.io/tags/Tool-Chain/"/>
+    
+      <category term="代码质量" scheme="https://oakchen.gitee.io/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ClangFormat参考</title>
+    <link href="https://oakchen.gitee.io/2022/05/09/ClangFormat-Reference/"/>
+    <id>https://oakchen.gitee.io/2022/05/09/ClangFormat-Reference/</id>
+    <published>2022-05-09T14:43:55.000Z</published>
+    <updated>2023-09-14T05:55:05.343Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#概述&quot;&gt;&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;p&gt;ClangFormat是一组基于LibFormat的工具，它根据风格选项（Style Options）来格式化C系语言源代码，如C/C++/Ja
+      
+    
+    </summary>
+    
+      <category term="开发工具" scheme="https://oakchen.gitee.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Tool Chain" scheme="https://oakchen.gitee.io/tags/Tool-Chain/"/>
+    
+      <category term="代码质量" scheme="https://oakchen.gitee.io/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OpenSSL使用Ed25519算法签名</title>
+    <link href="https://oakchen.gitee.io/2021/05/31/Sign-with-Ed25519-by-OpenSSL/"/>
+    <id>https://oakchen.gitee.io/2021/05/31/Sign-with-Ed25519-by-OpenSSL/</id>
+    <published>2021-05-31T08:45:37.000Z</published>
+    <updated>2023-09-14T05:55:05.355Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ed25519是一个公钥数字签名系统，以高性能及高安全性著称，其介绍可以参见&lt;a href=&quot;http://ed25519.cr.yp.to/index.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;这里&lt;/a&gt;，本文只描述如何利用OpenSSL
+      
+    
+    </summary>
+    
+      <category term="信息安全" scheme="https://oakchen.gitee.io/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="OpenSSL" scheme="https://oakchen.gitee.io/tags/OpenSSL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何给嵌入式Linux构建一个支持多特性的perf</title>
+    <link href="https://oakchen.gitee.io/2021/05/26/How-to-build-perf/"/>
+    <id>https://oakchen.gitee.io/2021/05/26/How-to-build-perf/</id>
+    <published>2021-05-26T10:58:26.000Z</published>
+    <updated>2023-09-14T05:55:05.351Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本文涉及环境为Ubuntu 20.04 x86_64、Ubuntu 20.04 ARM64、Linux Kernel源码Tag v5.9.11。&lt;/p&gt;
+&lt;p&gt;Perf工具对于Linux性能分析非常有用，在PC的Linux发行版上，只需要使用相应系统的包管理命令安装即可，例
+      
+    
+    </summary>
+    
+      <category term="开发工具" scheme="https://oakchen.gitee.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Tool Chain" scheme="https://oakchen.gitee.io/tags/Tool-Chain/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu上使用MTP传输文件</title>
+    <link href="https://oakchen.gitee.io/2021/04/23/Ubuntu-Use-MTP/"/>
+    <id>https://oakchen.gitee.io/2021/04/23/Ubuntu-Use-MTP/</id>
+    <published>2021-04-23T10:41:18.000Z</published>
+    <updated>2023-09-14T05:55:05.359Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;mtp是什么&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#mtp是什么&quot;&gt;&lt;/a&gt; MTP是什么&lt;/h2&gt;
+&lt;p&gt;媒体传输协议是一个基于图片传输协议（PTP，Picture Transfer Protocol）的自定义扩展协议。媒体传
+      
+    
+    </summary>
+    
+      <category term="Linux使用" scheme="https://oakchen.gitee.io/categories/Linux%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="Ubuntu" scheme="https://oakchen.gitee.io/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Android Studio的那些问题与解决办法</title>
+    <link href="https://oakchen.gitee.io/2021/04/06/AS-Issues-and-Solution/"/>
+    <id>https://oakchen.gitee.io/2021/04/06/AS-Issues-and-Solution/</id>
+    <published>2021-04-06T11:41:05.000Z</published>
+    <updated>2023-09-14T05:55:05.331Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在使用Android Studio的过程中，不免会遇到些莫名其妙的问题，这些问题的产生，可能是由于Android Studio本身的版本兼容性，也可能是使用的Gradle构建工具的兼容性，或者国内网络环境的因素等。本文收集了一些使用Android Studio过程中遇到的问
+      
+    
+    </summary>
+    
+      <category term="开发工具" scheme="https://oakchen.gitee.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Android Studio" scheme="https://oakchen.gitee.io/tags/Android-Studio/"/>
+    
+      <category term="Gradle" scheme="https://oakchen.gitee.io/tags/Gradle/"/>
+    
+      <category term="Tool Chain" scheme="https://oakchen.gitee.io/tags/Tool-Chain/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用df命令看到的分区大小是正确的吗？</title>
+    <link href="https://oakchen.gitee.io/2020/08/11/Is-fs-size-correct/"/>
+    <id>https://oakchen.gitee.io/2020/08/11/Is-fs-size-correct/</id>
+    <published>2020-08-11T12:43:06.000Z</published>
+    <updated>2023-09-14T05:55:05.355Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在使用Linux时，通常会用到df命令来查看磁盘挂载情况，那么df的输出结果可信吗？一般用户似乎不应怀疑，作者以前也从没怀疑过，直到发生了下面的这些事情。&lt;/p&gt;
+&lt;h2 id=&quot;df报告的分区大小比分区表定义的大时&quot;&gt;&lt;a class=&quot;markdownIt-Anchor
+      
+    
+    </summary>
+    
+      <category term="操作系统" scheme="https://oakchen.gitee.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="Linux" scheme="https://oakchen.gitee.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git使用问题与解决方法</title>
+    <link href="https://oakchen.gitee.io/2020/07/29/Git-Issues-and-Solution/"/>
+    <id>https://oakchen.gitee.io/2020/07/29/Git-Issues-and-Solution/</id>
+    <published>2020-07-29T21:43:06.000Z</published>
+    <updated>2023-09-14T05:56:09.710Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本文记录一些使用Git过程中遇到的问题及其解决办法，如无特别提及，所用环境为git version 2.25.1/Ubuntu 20.04 x64。&lt;/p&gt;
+&lt;h2 id=&quot;git-clone时出现302错误&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; hr
+      
+    
+    </summary>
+    
+      <category term="开发工具" scheme="https://oakchen.gitee.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Tool Chain" scheme="https://oakchen.gitee.io/tags/Tool-Chain/"/>
+    
+      <category term="Git" scheme="https://oakchen.gitee.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GCC交叉编译器的命名与用法</title>
+    <link href="https://oakchen.gitee.io/2019/07/15/Cross-Build-Compiler-Name-Usage/"/>
+    <id>https://oakchen.gitee.io/2019/07/15/Cross-Build-Compiler-Name-Usage/</id>
+    <published>2019-07-15T02:21:37.000Z</published>
+    <updated>2023-09-14T05:55:05.343Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本文内容，分别在Ubuntu 14.04/18.04使用&lt;code&gt;arm-none-eabi-gcc 4.8.2/6.3.1、arm-linux-gnueabi[hf]-gcc 4.8.4/7.4.0、aarch64-linux-gnu-gcc 4.8.4/7.4.0、a
+      
+    
+    </summary>
+    
+      <category term="开发工具" scheme="https://oakchen.gitee.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Tool Chain" scheme="https://oakchen.gitee.io/tags/Tool-Chain/"/>
+    
+      <category term="GCC" scheme="https://oakchen.gitee.io/tags/GCC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>apt-get update出现NO_PUBKEY提示的解决方法</title>
+    <link href="https://oakchen.gitee.io/2019/07/11/Apt-No-Public-Key/"/>
+    <id>https://oakchen.gitee.io/2019/07/11/Apt-No-Public-Key/</id>
+    <published>2019-07-11T05:43:41.000Z</published>
+    <updated>2023-09-14T05:55:05.331Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;问题现象&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题现象&quot;&gt;&lt;/a&gt; 问题现象&lt;/h2&gt;
+&lt;p&gt;在执行apt-get update时，出现如下提示：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;tab
+      
+    
+    </summary>
+    
+      <category term="Linux使用" scheme="https://oakchen.gitee.io/categories/Linux%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="Debian" scheme="https://oakchen.gitee.io/tags/Debian/"/>
+    
+      <category term="Ubuntu" scheme="https://oakchen.gitee.io/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo使用问题与解决方法</title>
+    <link href="https://oakchen.gitee.io/2019/06/26/Hexo-Issues-and-Solution/"/>
+    <id>https://oakchen.gitee.io/2019/06/26/Hexo-Issues-and-Solution/</id>
+    <published>2019-06-26T02:09:10.000Z</published>
+    <updated>2023-09-14T05:55:05.351Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本文记录一些使用Hexo过程中遇到的麻烦问题，一般的安装和使用教程可以参考&lt;a href=&quot;https://hexo.io/zh-cn/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo官方文档&lt;/a&gt;，这里就不写了。验证环境为Hexo v
+      
+    
+    </summary>
+    
+      <category term="软件使用" scheme="https://oakchen.gitee.io/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="Hexo" scheme="https://oakchen.gitee.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Samba使用问题与解决方法</title>
+    <link href="https://oakchen.gitee.io/2019/06/21/Samba-Issues-and-Solution/"/>
+    <id>https://oakchen.gitee.io/2019/06/21/Samba-Issues-and-Solution/</id>
+    <published>2019-06-21T07:08:12.000Z</published>
+    <updated>2023-09-14T05:55:05.355Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;windows无法访问samba共享的符号链接指向的目录&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#windows无法访问samba共享的符号链接指向的目录&quot;&gt;&lt;/a&gt; Windows无法访问Samba共享的符号链接指向的目录&lt;/h
+      
+    
+    </summary>
+    
+      <category term="服务器" scheme="https://oakchen.gitee.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="Samba" scheme="https://oakchen.gitee.io/tags/Samba/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>家庭网关设备的隐藏账户和密码</title>
+    <link href="https://oakchen.gitee.io/2019/06/20/HomeGateway-Hidden-Username-Password/"/>
+    <id>https://oakchen.gitee.io/2019/06/20/HomeGateway-Hidden-Username-Password/</id>
+    <published>2019-06-20T10:41:38.000Z</published>
+    <updated>2023-09-14T05:55:05.351Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在安装家庭宽带时，运营商会给用户一个网关设备，现在常见的就是光猫。这些设备，会提供给用户一个普通账户和密码，可以进行一些有限的修改，在中国电信的设备上，这个账户是useradmin。然而，总是有些玩家想要更大程度地控制自己的设备，启用更多的功能，于是，出现了各种破解的方法，
+      
+    
+    </summary>
+    
+      <category term="信息安全" scheme="https://oakchen.gitee.io/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="网络设备" scheme="https://oakchen.gitee.io/tags/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>APK编译错误之Error inflating class</title>
+    <link href="https://oakchen.gitee.io/2019/05/28/APK-Build-Issue-Error-inflating-class/"/>
+    <id>https://oakchen.gitee.io/2019/05/28/APK-Build-Issue-Error-inflating-class/</id>
+    <published>2019-05-28T07:04:16.000Z</published>
+    <updated>2023-08-02T00:59:54.689Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这里记录的案例，虽说确实是编译原因导致的，但问题真正发生是在运行时。开发工具：Android Studio 3.4.1，运行环境：Android 5.1.1。&lt;/p&gt;
+&lt;h2 id=&quot;问题现象&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#问题现
+      
+    
+    </summary>
+    
+      <category term="软件开发" scheme="https://oakchen.gitee.io/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Android应用" scheme="https://oakchen.gitee.io/tags/Android%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="Android Studio" scheme="https://oakchen.gitee.io/tags/Android-Studio/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>APK编译错误之Duplicate class</title>
+    <link href="https://oakchen.gitee.io/2019/05/24/APK-Build-Issue-Duplicate-class/"/>
+    <id>https://oakchen.gitee.io/2019/05/24/APK-Build-Issue-Duplicate-class/</id>
+    <published>2019-05-24T07:07:12.000Z</published>
+    <updated>2023-08-02T00:59:54.689Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;为了快速开发，不免使用些第三方库，这时，第三方库的依赖包与我们原来引用的同名包就可能存在版本冲突。这里，记录一个在Android Studio 3.4.1中引用了某第三方库后，编译时出现Duplicate class的问题及其解决办法。编译输出如下图：&lt;/p&gt;
+&lt;p&gt;&lt;im
+      
+    
+    </summary>
+    
+      <category term="软件开发" scheme="https://oakchen.gitee.io/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Android应用" scheme="https://oakchen.gitee.io/tags/Android%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="Android Studio" scheme="https://oakchen.gitee.io/tags/Android-Studio/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu远程桌面连接</title>
+    <link href="https://oakchen.gitee.io/2019/04/22/Ubuntu-RemoteDesktop/"/>
+    <id>https://oakchen.gitee.io/2019/04/22/Ubuntu-RemoteDesktop/</id>
+    <published>2019-04-22T16:00:00.000Z</published>
+    <updated>2019-05-19T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本文在Ubuntu 18.04上测试通过。&lt;/p&gt;
+&lt;p&gt;在Ubuntu上使用远程桌面的方式也有不少，如果是Ubuntu桌面版系统，系统自带的设置即可配置共享桌面，本文讲述的，则是在Ubuntu Server版本上安装并使用远程桌面的方式，相对VNC之类的来讲，也算是一种比
+      
+    
+    </summary>
+    
+      <category term="Linux使用" scheme="https://oakchen.gitee.io/categories/Linux%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="Ubuntu" scheme="https://oakchen.gitee.io/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu扩展软件包——PPA的使用</title>
+    <link href="https://oakchen.gitee.io/2019/04/21/Ubuntu-UsingPPA/"/>
+    <id>https://oakchen.gitee.io/2019/04/21/Ubuntu-UsingPPA/</id>
+    <published>2019-04-21T16:00:00.000Z</published>
+    <updated>2019-05-19T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;什么是ppa&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#什么是ppa&quot;&gt;&lt;/a&gt; 什么是PPA&lt;/h2&gt;
+&lt;p&gt;PPA，全称为Personal Package Archives，也就是个人软件包集。&lt;/p&gt;
+&lt;p&gt;在Ubuntu系统
+      
+    
+    </summary>
+    
+      <category term="Linux使用" scheme="https://oakchen.gitee.io/categories/Linux%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="Ubuntu" scheme="https://oakchen.gitee.io/tags/Ubuntu/"/>
+    
+  </entry>
+  
+</feed>
