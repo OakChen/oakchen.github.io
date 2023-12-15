@@ -360,13 +360,13 @@
 <h2 id="如何使用ppa"><a class="markdownIt-Anchor" href="#如何使用ppa"></a> 如何使用PPA</h2>
 <p>一般来讲，使用PPA具有如下步骤：</p>
 <ol>
-<li>在<a href="https://launchpad.net/%E7%BD%91%E7%AB%99%E6%90%9C%E7%B4%A2%E4%BD%A0%E8%A6%81%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85" target="_blank" rel="noopener">https://launchpad.net/网站搜索你要的软件包</a></li>
+<li>在<a href="https://launchpad.net" target="_blank" rel="noopener">https://launchpad.net</a>网站搜索你要的软件包</li>
 <li>在搜索结果列表中，找到你需要的那个软件包的链接</li>
 <li>打开所需软件包的链接后，在“Adding this PPA to your system”这一节中查看使用此PPA的指令，并在Ubuntu系统中逐条执行，此后即可使用此PPA里的软件包</li>
 <li>“PPA description”这一节里，可能提供了安装此包所需的指令，如果在“PPA description”这一节里没有，那就从“Overview of published packages”找到包名，并执行<code>apt-get install packageName</code>即可</li>
 </ol>
 <h2 id="实例在ubuntu中安装deepin-linux的桌面环境"><a class="markdownIt-Anchor" href="#实例在ubuntu中安装deepin-linux的桌面环境"></a> 实例：在Ubuntu中安装Deepin Linux的桌面环境</h2>
-<p>用浏览器打开<a href="https://launchpad.net/%EF%BC%8C%E5%9C%A8%E2%80%9CSearch" target="_blank" rel="noopener">https://launchpad.net/，在“Search</a> Launchpad”按钮旁边的输入框里输入“deepin desktop”或“deepin”，出来一串结果，排在第一位的即是“Deepin Desktop Environment : leaeasy - Launchpad”，打开这个链接，在“Adding this PPA to your system”这一节里，可以看到如下指令：</p>
+<p>用浏览器打开<a href="https://launchpad.net" target="_blank" rel="noopener">https://launchpad.net</a>，在“Search Launchpad”按钮旁边的输入框里输入“deepin desktop”或“deepin”，出来一串结果，排在第一位的即是“Deepin Desktop Environment : leaeasy - Launchpad”，打开这个链接，在“Adding this PPA to your system”这一节里，可以看到如下指令：</p>
 <p><code>sudo add-apt-repository ppa:leaeasy/dde</code></p>
 <p><code>sudo apt-get update</code></p>
 <p>同时，在“PPA description”这一节里，也提供了完整的安装Deepin桌面环境的指令，把这些指令在Ubuntu系统中执行并根据提示操作即可：</p>
