@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sfysoft.com/"/>
-  <updated>2023-09-14T05:55:05.339Z</updated>
+  <updated>2024-03-18T16:00:00.000Z</updated>
   <id>https://www.sfysoft.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows 2003使用问题与解决方法</title>
+    <link href="https://www.sfysoft.com/2024/03/18/Windows-2003-Issues-and-Solution/"/>
+    <id>https://www.sfysoft.com/2024/03/18/Windows-2003-Issues-and-Solution/</id>
+    <published>2024-03-18T16:00:00.000Z</published>
+    <updated>2024-03-18T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Windows Server 2003一度是我最喜欢使用的操作系统，使用的时间可能也是最长。Windows Server 2003是2003年3月28日发布的，并已于2015年终止支持，在20多年后的今天来使用它，多少会有一些问题，好在当初已经预见到这一系统终止支持后，运行
+      
+    
+    </summary>
+    
+      <category term="Windows使用" scheme="https://www.sfysoft.com/categories/Windows%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="Windows" scheme="https://www.sfysoft.com/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title>ClangFormat实践</title>

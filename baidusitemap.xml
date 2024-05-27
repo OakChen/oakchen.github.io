@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.sfysoft.com/2024/03/18/Windows-2003-Issues-and-Solution/</loc>
+    <lastmod>2024-03-18</lastmod>
+  </url>
+  <url>
     <loc>https://www.sfysoft.com/2020/07/29/Git-Issues-and-Solution/</loc>
     <lastmod>2023-09-14</lastmod>
   </url>
@@ -45,11 +49,11 @@
     <lastmod>2023-09-14</lastmod>
   </url>
   <url>
-    <loc>https://www.sfysoft.com/2021/04/06/AS-Issues-and-Solution/</loc>
+    <loc>https://www.sfysoft.com/2019/07/11/Apt-No-Public-Key/</loc>
     <lastmod>2023-09-14</lastmod>
   </url>
   <url>
-    <loc>https://www.sfysoft.com/2019/07/11/Apt-No-Public-Key/</loc>
+    <loc>https://www.sfysoft.com/2021/04/06/AS-Issues-and-Solution/</loc>
     <lastmod>2023-09-14</lastmod>
   </url>
   <url>
@@ -61,11 +65,11 @@
     <lastmod>2023-08-02</lastmod>
   </url>
   <url>
-    <loc>https://www.sfysoft.com/2019/04/21/Ubuntu-UsingPPA/</loc>
+    <loc>https://www.sfysoft.com/2019/04/22/Ubuntu-RemoteDesktop/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>
   <url>
-    <loc>https://www.sfysoft.com/2019/04/22/Ubuntu-RemoteDesktop/</loc>
+    <loc>https://www.sfysoft.com/2019/04/21/Ubuntu-UsingPPA/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>
 </urlset> 

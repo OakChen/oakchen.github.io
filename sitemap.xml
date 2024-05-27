@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.sfysoft.com/2024/03/18/Windows-2003-Issues-and-Solution/</loc>
+    
+    <lastmod>2024-03-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.sfysoft.com/2020/07/29/Git-Issues-and-Solution/</loc>
     
     <lastmod>2023-09-14</lastmod>
@@ -101,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://www.sfysoft.com/2021/04/06/AS-Issues-and-Solution/</loc>
+    <loc>https://www.sfysoft.com/2019/07/11/Apt-No-Public-Key/</loc>
     
     <lastmod>2023-09-14</lastmod>
     
@@ -110,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://www.sfysoft.com/2019/07/11/Apt-No-Public-Key/</loc>
+    <loc>https://www.sfysoft.com/2021/04/06/AS-Issues-and-Solution/</loc>
     
     <lastmod>2023-09-14</lastmod>
     
@@ -173,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://www.sfysoft.com/2019/04/21/Ubuntu-UsingPPA/</loc>
+    <loc>https://www.sfysoft.com/2019/04/22/Ubuntu-RemoteDesktop/</loc>
     
     <lastmod>2019-05-19</lastmod>
     
@@ -182,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://www.sfysoft.com/2019/04/22/Ubuntu-RemoteDesktop/</loc>
+    <loc>https://www.sfysoft.com/2019/04/21/Ubuntu-UsingPPA/</loc>
     
     <lastmod>2019-05-19</lastmod>
     
@@ -193,7 +202,7 @@
 
   <url>
     <loc>https://www.sfysoft.com/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -201,105 +210,112 @@
   
   <url>
     <loc>https://www.sfysoft.com/tags/Android%E5%BA%94%E7%94%A8/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sfysoft.com/tags/Android-Studio/</loc>
-    <lastmod>2023-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.sfysoft.com/tags/Gradle/</loc>
-    <lastmod>2023-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.sfysoft.com/tags/Tool-Chain/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sfysoft.com/tags/Debian/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sfysoft.com/tags/Ubuntu/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.sfysoft.com/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <loc>https://www.sfysoft.com/tags/Gradle/</loc>
+    <lastmod>2024-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.sfysoft.com/tags/Tool-Chain/</loc>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sfysoft.com/tags/GCC/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.sfysoft.com/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/</loc>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sfysoft.com/tags/SecureCRT/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sfysoft.com/tags/Git/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sfysoft.com/tags/Hexo/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sfysoft.com/tags/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sfysoft.com/tags/Linux/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sfysoft.com/tags/Samba/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sfysoft.com/tags/OpenSSL/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.sfysoft.com/tags/Windows/</loc>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -308,49 +324,56 @@
   
   <url>
     <loc>https://www.sfysoft.com/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2023-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.sfysoft.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sfysoft.com/categories/Linux%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.sfysoft.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sfysoft.com/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sfysoft.com/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sfysoft.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.sfysoft.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2023-12-14</lastmod>
+    <lastmod>2024-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.sfysoft.com/categories/Windows%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2024-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
