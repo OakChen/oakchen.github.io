@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.sfysoft.com/2024/06/07/Gradle-Practice/</loc>
+    <lastmod>2024-06-07</lastmod>
+  </url>
+  <url>
     <loc>https://www.sfysoft.com/2024/03/18/Windows-2003-Issues-and-Solution/</loc>
     <lastmod>2024-03-18</lastmod>
   </url>
@@ -37,11 +41,11 @@
     <lastmod>2023-09-14</lastmod>
   </url>
   <url>
-    <loc>https://www.sfysoft.com/2019/07/15/Cross-Build-Compiler-Name-Usage/</loc>
+    <loc>https://www.sfysoft.com/2022/05/09/ClangFormat-Reference/</loc>
     <lastmod>2023-09-14</lastmod>
   </url>
   <url>
-    <loc>https://www.sfysoft.com/2022/05/09/ClangFormat-Reference/</loc>
+    <loc>https://www.sfysoft.com/2019/07/15/Cross-Build-Compiler-Name-Usage/</loc>
     <lastmod>2023-09-14</lastmod>
   </url>
   <url>
@@ -49,11 +53,11 @@
     <lastmod>2023-09-14</lastmod>
   </url>
   <url>
-    <loc>https://www.sfysoft.com/2019/07/11/Apt-No-Public-Key/</loc>
+    <loc>https://www.sfysoft.com/2021/04/06/AS-Issues-and-Solution/</loc>
     <lastmod>2023-09-14</lastmod>
   </url>
   <url>
-    <loc>https://www.sfysoft.com/2021/04/06/AS-Issues-and-Solution/</loc>
+    <loc>https://www.sfysoft.com/2019/07/11/Apt-No-Public-Key/</loc>
     <lastmod>2023-09-14</lastmod>
   </url>
   <url>

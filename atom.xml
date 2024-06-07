@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sfysoft.com/"/>
-  <updated>2024-03-18T16:00:00.000Z</updated>
+  <updated>2024-06-07T12:58:05.000Z</updated>
   <id>https://www.sfysoft.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Gradle实践</title>
+    <link href="https://www.sfysoft.com/2024/06/07/Gradle-Practice/"/>
+    <id>https://www.sfysoft.com/2024/06/07/Gradle-Practice/</id>
+    <published>2024-06-07T12:58:05.000Z</published>
+    <updated>2024-06-07T12:58:05.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;解决gradle下载慢的问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#解决gradle下载慢的问题&quot;&gt;&lt;/a&gt; 解决gradle下载慢的问题&lt;/h2&gt;
+&lt;p&gt;在中国大陆使用gradle时，最常见的问题就是gradle本身及其包下载
+      
+    
+    </summary>
+    
+      <category term="开发工具" scheme="https://www.sfysoft.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Gradle" scheme="https://www.sfysoft.com/tags/Gradle/"/>
+    
+      <category term="Tool Chain" scheme="https://www.sfysoft.com/tags/Tool-Chain/"/>
+    
+  </entry>
   
   <entry>
     <title>Windows 2003使用问题与解决方法</title>
